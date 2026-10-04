@@ -1,0 +1,1461 @@
+{
+  "overall_status": "PARTIALLY_VERIFIED",
+  "code_status": "NOT_RUN",
+  "manuscript_status": "FAIL",
+  "tally": {
+    "PASS": 76,
+    "FAIL": 7,
+    "NOT_RUN": 9,
+    "BLOCKED": 2
+  },
+  "checks": [
+    {
+      "name": "gate-ruff",
+      "category": "gate",
+      "status": "PASS",
+      "detail": "ruff exited with code 0",
+      "evidence": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "gate-black",
+      "category": "gate",
+      "status": "PASS",
+      "detail": "black exited with code 0",
+      "evidence": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "gate-isort",
+      "category": "gate",
+      "status": "PASS",
+      "detail": "isort exited with code 0",
+      "evidence": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "gate-mypy",
+      "category": "gate",
+      "status": "PASS",
+      "detail": "mypy exited with code 0",
+      "evidence": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "gate-pytest",
+      "category": "gate",
+      "status": "PASS",
+      "detail": "pytest exited with code 0",
+      "evidence": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "assets-readable",
+      "category": "provenance",
+      "status": "PASS",
+      "detail": "read 12 programmes over 2477 genes, 1197 pathways over 1974 genes, and 2330 annotated targets with 0 interaction edges",
+      "evidence": {
+        "programmes": 12,
+        "programme_universe": 2477,
+        "pathways": 1197,
+        "pathway_universe": 1974,
+        "annotations": 2330,
+        "interaction_edges": 0,
+        "interaction_edge_types": [],
+        "snapshot_notes": 4,
+        "retrieved_on": "2026-09-29"
+      }
+    },
+    {
+      "name": "panel-shapes",
+      "category": "shape",
+      "status": "PASS",
+      "detail": "2315 genes over 4 layer tokens and 12 programmes; simplex rows deviate by at most 2.22e-16",
+      "evidence": {
+        "shapes": {
+          "cohort_features": [
+            2315,
+            8
+          ],
+          "cellstate_features": [
+            2315,
+            23
+          ],
+          "niche_features": [
+            2315,
+            6
+          ],
+          "context_features": [
+            2315,
+            32
+          ],
+          "availability": [
+            2315,
+            4
+          ],
+          "programme_targets": [
+            2315,
+            12
+          ]
+        },
+        "simplex_max_deviation": 0.0
+      }
+    },
+    {
+      "name": "encoder-widths",
+      "category": "shape",
+      "status": "PASS",
+      "detail": "frozen encoders emit [(2315, 8), (2315, 23), (2315, 6), (2315, 32)] with declared widths (8, 23, 6, 32)",
+      "evidence": {
+        "shapes": [
+          [
+            2315,
+            8
+          ],
+          [
+            2315,
+            23
+          ],
+          [
+            2315,
+            6
+          ],
+          [
+            2315,
+            32
+          ]
+        ],
+        "widths": [
+          8,
+          23,
+          6,
+          32
+        ]
+      }
+    },
+    {
+      "name": "forward-shapes",
+      "category": "shape",
+      "status": "PASS",
+      "detail": "forward emits {'relevance': (2315,), 'readiness': (2315, 2), 'programmes': (2315, 12), 'modality_mass': (2315, 4), 'graph_state': (2315, 12)}; programme rows sum to one within 2.38e-07 and readiness rows within 1.19e-07",
+      "evidence": {
+        "shapes": {
+          "relevance": [
+            2315
+          ],
+          "readiness": [
+            2315,
+            2
+          ],
+          "programmes": [
+            2315,
+            12
+          ],
+          "modality_mass": [
+            2315,
+            4
+          ],
+          "graph_state": [
+            2315,
+            12
+          ]
+        },
+        "programme_simplex_error": 2.38419e-07
+      }
+    },
+    {
+      "name": "graph-assembly",
+      "category": "shape",
+      "status": "PASS",
+      "detail": "the graph carries 3557 nodes (2315 genes, 1242 annotation nodes), 50909 edges over 5 edge types, and every endpoint is in range",
+      "evidence": {
+        "nodes": 3557,
+        "gene_nodes": 2315,
+        "annotation_nodes": 1242,
+        "edges": 50909,
+        "edge_types": [
+          "programme_membership",
+          "population_attribution",
+          "compartment_localisation",
+          "tractability_annotation",
+          "pathway_membership"
+        ],
+        "max_endpoint_index": 3553,
+        "pathway_edges": 22442,
+        "pathway_nodes": 1197
+      }
+    },
+    {
+      "name": "annotation-embeddings-frozen",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "annotation-node embeddings are identical across two assemblies of the same panel (1242 nodes, no parameter carries them)",
+      "evidence": {
+        "annotation_nodes": 1242,
+        "identical": true
+      }
+    },
+    {
+      "name": "masked-attention-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "masked attention against a NumPy reference over 24 genes; worst gap 6.773e-08",
+      "evidence": {
+        "genes": 24,
+        "max_gap": 6.7733e-08
+      }
+    },
+    {
+      "name": "segment-softmax-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "segment softmax against a per-group NumPy reference; worst gap 4.171e-08",
+      "evidence": {
+        "max_gap": 4.1713e-08,
+        "group_sums": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "ndcg-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "NDCG@20 against a direct double-sum reference; gap 0.000e+00",
+      "evidence": {
+        "computed": 0.3168254999,
+        "reference": 0.3168254999
+      }
+    },
+    {
+      "name": "kendall-tau-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "Kendall tau-b against an explicit pair count; gap 0.000e+00",
+      "evidence": {
+        "computed": 0.786666667,
+        "reference": 0.786666667,
+        "concordant": 268,
+        "discordant": 32
+      }
+    },
+    {
+      "name": "holm-reference",
+      "category": "statistics",
+      "status": "PASS",
+      "detail": "Holm step-down against a from-definition reference; gap 0.000e+00, rejected 1 of 10 at alpha 0.05",
+      "evidence": {
+        "family_size": 10,
+        "rejected": 1,
+        "expected_rejections": 1,
+        "monotone_in_p_order": true
+      }
+    },
+    {
+      "name": "bootstrap-interval-reference",
+      "category": "statistics",
+      "status": "PASS",
+      "detail": "percentile interval [-2.2302, 1.8730] brackets its point estimate -0.2017; a null paired difference brackets zero",
+      "evidence": {
+        "level": 0.95,
+        "resamples": 64,
+        "paired_level": 0.9
+      }
+    },
+    {
+      "name": "tost-reference",
+      "category": "statistics",
+      "status": "PASS",
+      "detail": "a 0.003 paired difference is declared parity inside +-0.010 (interval [-0.0030, -0.0030]) and a 0.05 difference is not",
+      "evidence": {
+        "parity_interval": [
+          -0.003,
+          -0.003
+        ],
+        "outside_interval": [
+          -0.05,
+          -0.05
+        ],
+        "margin": 0.01
+      }
+    },
+    {
+      "name": "auroc-ece-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "AUROC against an explicit pairwise comparison; gap 0.000e+00; expected calibration error 0.2154",
+      "evidence": {
+        "auroc": 0.995670996,
+        "auroc_reference": 0.995670996,
+        "ece": 0.215404
+      }
+    },
+    {
+      "name": "kl-js-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "KL and Jensen-Shannon against direct log-sum references; gaps 4.441e-16 and 1.665e-16; JS bounded by ln 2",
+      "evidence": {
+        "kl_gap": 0.0,
+        "js_gap": 0.0,
+        "js_bounded": true
+      }
+    },
+    {
+      "name": "deletion-curve-reference",
+      "category": "unit",
+      "status": "PASS",
+      "detail": "the deletion curve reproduces an explicit mask enumeration; gaps 0.000e+00 and 0.000e+00 over 3 grid points",
+      "evidence": {
+        "grid": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "max_gap_high": 0.0,
+        "max_gap_low": 0.0,
+        "layers": 4
+      }
+    },
+    {
+      "name": "loss-and-backward",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "objective 4.269427 decomposes into ranking 3.461017, immune 0.678806, readiness 0.660529 and perturbation 0.554968; 26 parameters carry gradient",
+      "evidence": {
+        "total": 4.269427,
+        "ranking": 3.461017,
+        "immune": 0.678806,
+        "readiness": 0.660529,
+        "perturbation": 0.554968,
+        "parameters_with_gradient": 26
+      }
+    },
+    {
+      "name": "parameter-update",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "one AdamW step moved 31 of 40 parameter tensors",
+      "evidence": {
+        "moved": 31,
+        "tensors": 40
+      }
+    },
+    {
+      "name": "checkpoint-round-trip",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "checkpoint round trip preserves the weight digest (c5a3ba0ada01...) and records seed 20260101; the scratch directory holds ['round_trip.pt']",
+      "evidence": {
+        "digest_match": true,
+        "seed": 20260101,
+        "scratch_entries": [
+          "round_trip.pt"
+        ]
+      }
+    },
+    {
+      "name": "single-batch-overfit",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "the ranking term over a fixed batch of 24 genes falls from 3.166923 to 0.114782 over 40 steps",
+      "evidence": {
+        "first_window_mean": 3.166923,
+        "last_window_mean": 0.114782,
+        "steps": 40
+      }
+    },
+    {
+      "name": "minimal-training-loop",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "2 epochs on the reduced schedule; loss 4.056176 to 3.863416, best validation fidelity 0.3848",
+      "evidence": {
+        "epochs": 2,
+        "first_loss": 4.056176,
+        "last_loss": 3.863416,
+        "best_epoch": 1,
+        "trainable_parameters": 4803
+      }
+    },
+    {
+      "name": "modality-dropout-non-empty",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "modality dropout dropped 19.055% of available layer slots, reduced the layer count for 1059 genes and left no gene without a token",
+      "evidence": {
+        "dropped_fraction": 0.190548,
+        "genes_with_fewer_layers": 1059,
+        "genes_without_token": 0,
+        "kept_columns": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "name": "availability-mechanism",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "withholding every layer beyond the cohort block removed 4350 availability slots and left 0.00e+00 attention mass on the withheld layers",
+      "evidence": {
+        "removed_slots": 4350,
+        "max_withheld_layer_mass": 0.0,
+        "layers_kept": 1
+      }
+    },
+    {
+      "name": "determinism-under-seed",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "the same seed reproduces the initial weights byte for byte and a different seed does not",
+      "evidence": {
+        "same_seed_match": true,
+        "different_seed_differs": true
+      }
+    },
+    {
+      "name": "label-split-integrity",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "the three label blocks are disjoint and cover all 2315 units; the held-out block carries 122 curated-target labels",
+      "evidence": {
+        "training": 1846,
+        "validation": 347,
+        "held_out": 122,
+        "overlap": 0,
+        "protected_in_held_out": 122
+      }
+    },
+    {
+      "name": "cohort-fold-leakage",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "8 leave-one-cohort-out folds, each training on 7 cohorts and holding out one; 0 folds leak the held-out cohort",
+      "evidence": {
+        "folds": 8,
+        "training_cohorts": 7,
+        "leaked": []
+      }
+    },
+    {
+      "name": "config-schedule-integrity",
+      "category": "provenance",
+      "status": "PASS",
+      "detail": "configs/study/primary.yaml carries batch 32, 60 epochs and 5 seeds; _smoke.yaml is labelled and reduced",
+      "evidence": {
+        "primary_matches": true,
+        "smoke_guarded": true,
+        "expected": {
+          "batch_size": 32,
+          "epochs": 60,
+          "seeds": 5
+        }
+      }
+    },
+    {
+      "name": "study-pipeline",
+      "category": "regression",
+      "status": "PASS",
+      "detail": "the study pipeline produced 8 comparison rows, 10 ablation rows, 2 interaction rows and a 12-candidate shortlist over 1 epochs",
+      "evidence": {
+        "table1_rows": 8,
+        "ablation_rows": 10,
+        "interaction_rows": 2,
+        "resolutions": 7,
+        "stability_rows": 11,
+        "shortlist": 12,
+        "framework_ndcg20": 0.0396,
+        "interaction_keys_present": true
+      }
+    },
+    {
+      "name": "cohort-table1-recovery",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 1 NDCG@20, MRR, AUROC, Top-50, AUPRC and KL on the held-out curated set: the eight expression cohorts are public but their series matrices are 10-125 MB and are not redistributed with the release, so this value cannot be produced from the shipped tree",
+      "paper_anchor": "Table 1, p. 10"
+    },
+    {
+      "name": "cohort-table2-per-cohort",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 2(a) per-cohort leave-one-cohort-out recovery: the eight expression cohorts are public but their series matrices are 10-125 MB and are not redistributed with the release, so this value cannot be produced from the shipped tree",
+      "paper_anchor": "Table 2 panel (a), p. 13"
+    },
+    {
+      "name": "cohort-table6-cost",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 6 training hours and parameter counts were measured on the reported single 80 GB accelerator, which this host is not",
+      "paper_anchor": "Table 6, p. 18"
+    },
+    {
+      "name": "container-build",
+      "category": "execution",
+      "status": "BLOCKED",
+      "detail": "no container runtime is available on this host, so the image build cannot be exercised"
+    },
+    {
+      "name": "no-forbidden-phrases",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no reproduction or attribution phrasing in the shipped tree",
+      "evidence": {
+        "hits": [],
+        "files_scanned": 134
+      }
+    },
+    {
+      "name": "no-artificial-data-wording",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "the shipped tree describes its non-distributed panel as a fixture and uses no other vocabulary",
+      "evidence": {
+        "hits": []
+      }
+    },
+    {
+      "name": "no-host-paths",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no host path is recorded in a shipped file",
+      "evidence": {
+        "hits": []
+      }
+    },
+    {
+      "name": "no-emoji",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no emoji in the shipped tree",
+      "evidence": {
+        "hits": []
+      }
+    },
+    {
+      "name": "documentation-surface",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "README.md is the only markdown file and no workflow directory ships (0 found)",
+      "evidence": {
+        "markdown": [
+          "README.md"
+        ],
+        "workflows": []
+      }
+    },
+    {
+      "name": "readme-sections",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "the README covers installation, data, training, evaluation and compute without a code-availability, citation or checkpoint section",
+      "evidence": {
+        "banned_present": [],
+        "missing_required": []
+      }
+    },
+    {
+      "name": "provenance-and-licence",
+      "category": "provenance",
+      "status": "PASS",
+      "detail": "LICENSE, NOTICE and dataset_urls.txt ship with the release",
+      "evidence": {
+        "missing": []
+      }
+    },
+    {
+      "name": "dataset-links",
+      "category": "provenance",
+      "status": "PASS",
+      "detail": "20 resource entries carrying 20 verified links over 5 hosts",
+      "evidence": {
+        "entries": 20,
+        "links": 20,
+        "hosts": [
+          "api.platform.opentargets.org",
+          "data.broadinstitute.org",
+          "depmap.org",
+          "ftp.ncbi.nlm.nih.gov",
+          "www.gsea-msigdb.org"
+        ]
+      }
+    },
+    {
+      "name": "no-duplicate-modules",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no two of the 83 modules are byte-identical",
+      "evidence": {
+        "groups": []
+      }
+    },
+    {
+      "name": "no-placeholder-implementations",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no placeholder body remains in the package",
+      "evidence": {
+        "hits": []
+      }
+    },
+    {
+      "name": "no-build-caches",
+      "category": "hygiene",
+      "status": "PASS",
+      "detail": "no build cache ships; every shipped file is readable source or a recorded artefact",
+      "evidence": {
+        "cached_files": [],
+        "cache_directories": [],
+        "cached_names": [
+          "__pycache__",
+          ".pytest_cache",
+          ".mypy_cache",
+          ".ruff_cache",
+          ".ipynb_checkpoints"
+        ]
+      }
+    },
+    {
+      "name": "container-runtime",
+      "category": "hygiene",
+      "status": "BLOCKED",
+      "detail": "no container runtime on this host; the image build is recorded BLOCKED rather than assumed"
+    },
+    {
+      "name": "manuscript-cohort-sample-sum",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 2(a) sample counts sum to 1332; Sec. 2.2 states 1332",
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "evidence": {
+        "sum": 1332,
+        "stated": 1332
+      }
+    },
+    {
+      "name": "manuscript-evaluation-units",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "148 targets over 8 cohorts is 1184 units; Sec. 2.7.1 states 1184",
+      "paper_anchor": "Sec. 2.7.1, p. 7",
+      "evidence": {
+        "computed": 1184,
+        "stated": 1184
+      }
+    },
+    {
+      "name": "manuscript-cohort-means-vs-loco",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "column means of Table 2(a) against the Table 3 leave-one-cohort-out row; worst gap 0.0004",
+      "paper_anchor": "Table 2 panel (a), p. 13",
+      "evidence": {
+        "column_means": {
+          "immunotargetnet": 0.5109,
+          "unconstrained_variant": 0.5056,
+          "typed_graph_ranking": 0.45,
+          "differential_expression": 0.238
+        },
+        "table3_row": {
+          "immunotargetnet": 0.511,
+          "unconstrained_variant": 0.506,
+          "typed_graph_ranking": 0.45,
+          "differential_expression": 0.238
+        },
+        "gaps": {
+          "immunotargetnet": 0.000125,
+          "unconstrained_variant": 0.000375,
+          "typed_graph_ranking": 0.0,
+          "differential_expression": 0.0
+        }
+      }
+    },
+    {
+      "name": "manuscript-in-distribution-vs-table1",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 3 in-distribution row against Table 1 NDCG@20; worst gap 0.0000",
+      "paper_anchor": "Table 3, p. 14",
+      "evidence": {
+        "gaps": {
+          "immunotargetnet": 0.0,
+          "unconstrained_variant": 0.0,
+          "typed_graph_ranking": 0.0,
+          "latent_factor_integration": 0.0,
+          "differential_expression": 0.0
+        }
+      }
+    },
+    {
+      "name": "manuscript-resolution-loss-column",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 2(b) loss column equals 0.539 minus the value; worst residual 0.000000",
+      "paper_anchor": "Table 2 panel (b), p. 13",
+      "evidence": {
+        "residuals": {
+          "none": 0.0,
+          "niche_layer": 0.0,
+          "graph_tower": 0.0,
+          "perturbation_objective": 0.0,
+          "readiness_head": 0.0,
+          "modality_dropout": -0.0
+        }
+      }
+    },
+    {
+      "name": "manuscript-gain-claims",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 1 and Sec. 3.1 gains recomputed from Table 1; worst residual 0.0000 points",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "computed": {
+          "ndcg_gap_strongest": 8.8,
+          "ndcg_gap_weakest": 22.8,
+          "auprc_gap_typed_graph": 13.0,
+          "auprc_gap_filter": 19.2
+        },
+        "stated": {
+          "ndcg_gap_strongest": 8.8,
+          "ndcg_gap_weakest": 22.8,
+          "auprc_gap_typed_graph": 13.0,
+          "auprc_gap_filter": 19.2
+        }
+      }
+    },
+    {
+      "name": "manuscript-primary-margin",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "0.539 against the pre-specified 0.50 threshold leaves 0.039",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "computed": 0.039,
+        "stated": 0.039
+      }
+    },
+    {
+      "name": "manuscript-parity-point-and-band",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "paired difference 0.003 with reported 90% interval [-0.003, 0.009] inside +-0.01",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "difference": 0.003,
+        "inside_band": true
+      }
+    },
+    {
+      "name": "manuscript-marginal-interval-overlap",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the two 95% intervals overlap by 0.0340; the manuscript reports intersecting intervals",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "overlap": 0.034
+      }
+    },
+    {
+      "name": "manuscript-constraint-axis-gaps",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "KL drop 0.521 nats (2.60x the 0.20 threshold), faithfulness gain 0.455 (1.82x 0.25), stability gain 0.137 (1.71x 0.08); smallest parity multiple 13.7",
+      "paper_anchor": "Sec. 3.2, pp. 10-11",
+      "evidence": {
+        "kl_drop": 0.521,
+        "faithfulness_gain": 0.455,
+        "stability_gain": 0.137,
+        "parity_multiples": {
+          "immune_relevance": 52.1,
+          "attribution_faithfulness": 45.5,
+          "rank_stability": 13.7
+        }
+      }
+    },
+    {
+      "name": "manuscript-best-baseline-gaps",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "against the strongest non-framework baseline: KL gap 0.296 nats, stability gap 0.190",
+      "paper_anchor": "Sec. 3.2, pp. 10-11",
+      "evidence": {
+        "kl_gap": 0.296,
+        "stability_gap": 0.19,
+        "stated_kl_gap": 0.296,
+        "stated_stability_gap": 0.19,
+        "baseline_kl": 0.517,
+        "baseline_tau": 0.588
+      }
+    },
+    {
+      "name": "manuscript-faithfulness-sentence-roles",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 3.2 reads 'the attribution of faithfulness is more than the one of 0.371 found by 0.377'. The arithmetic closes only when 0.371 is the baseline and 0.377 the gap (0.748 - 0.371 = 0.377), which is the reverse of the roles the sentence assigns.",
+      "paper_anchor": "Sec. 3.2, pp. 10-11",
+      "evidence": {
+        "closes_under_swapped_roles": true,
+        "framework": 0.748,
+        "baseline": 0.371,
+        "gap": 0.377
+      }
+    },
+    {
+      "name": "manuscript-interaction-ratios",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "all ten Table 4 interaction ratios recomputed as combined cost over the sum of individual costs; worst residual 0.0033",
+      "paper_anchor": "Table 4, p. 16",
+      "evidence": {
+        "computed": {
+          "graph_x_bottleneck": {
+            "ndcg20": 1.3333,
+            "mrr": 1.4583,
+            "kl": 1.0728,
+            "aucdel": 0.7805,
+            "tau": 0.831
+          },
+          "bottleneck_x_perturbation": {
+            "ndcg20": 2.0,
+            "mrr": 2.1667,
+            "kl": 1.089,
+            "aucdel": 0.9189,
+            "tau": 0.8416
+          }
+        },
+        "worst_residual": 0.0033
+      }
+    },
+    {
+      "name": "manuscript-individual-cost-claims",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 3.5 individual removal costs recomputed from Table 4; worst residual 0.0000",
+      "paper_anchor": "Sec. 3.5, p. 15",
+      "evidence": {
+        "computed": {
+          "graph_ndcg": 0.042,
+          "graph_stability": 0.076,
+          "perturbation_ndcg": 0.013,
+          "perturbation_stability": 0.084,
+          "druggability_ndcg": 0.005
+        },
+        "stated": {
+          "graph_ndcg": 0.042,
+          "graph_stability": 0.076,
+          "perturbation_ndcg": 0.013,
+          "perturbation_stability": 0.084,
+          "druggability_ndcg": 0.005
+        }
+      }
+    },
+    {
+      "name": "manuscript-shortlist-spearman",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Spearman correlation of the Table 5 relevance and readiness columns is 0.6573; Sec. 3.6 states 0.66",
+      "paper_anchor": "Sec. 3.6, pp. 15-16",
+      "evidence": {
+        "computed": 0.6573,
+        "stated": 0.66,
+        "n": 12
+      }
+    },
+    {
+      "name": "manuscript-shortlist-ordering",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "relevance decreases strictly with rank (True) and the readiness column is not rank-ordered (True)",
+      "paper_anchor": "Table 5, p. 17",
+      "evidence": {
+        "relevance_decreasing": true,
+        "readiness_not_rank_ordered": true
+      }
+    },
+    {
+      "name": "manuscript-cellstate-withholding-present",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 3.3 reports withholding the cell-state layer as NDCG@20 0.512, but Table 2(b) carries [0.497, 0.502, 0.526, 0.534, 0.539, 0.541] and Table 4 carries no cell-state row at all; the value appears in the prose only.",
+      "paper_anchor": "Sec. 3.3, pp. 11-12",
+      "evidence": {
+        "reported": 0.512,
+        "table2b_values": [
+          0.497,
+          0.502,
+          0.526,
+          0.534,
+          0.539,
+          0.541
+        ],
+        "table4_values": [
+          0.487,
+          0.497,
+          0.502,
+          0.519,
+          0.526,
+          0.534,
+          0.539,
+          0.541,
+          0.542
+        ],
+        "appears_in_tables": false
+      }
+    },
+    {
+      "name": "manuscript-cohort-ndcg-range",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "per-cohort NDCG@20 spans 0.478 to 0.556; Sec. 3.3 states 0.478 to 0.556",
+      "paper_anchor": "Sec. 3.3, pp. 11-12",
+      "evidence": {
+        "min": 0.478,
+        "max": 0.556
+      }
+    },
+    {
+      "name": "manuscript-training-time-ratio",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "6.1 h against 3.4 h is 1.794; Sec. 3.7 states 1.8",
+      "paper_anchor": "Sec. 3.7, p. 16",
+      "evidence": {
+        "computed": 1.7941,
+        "stated": 1.8
+      }
+    },
+    {
+      "name": "manuscript-transfer-never-exceeds-in-distribution",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 3 footnote states transfer never exceeds in-distribution performance for any configuration; 0 cell(s) violate it",
+      "paper_anchor": "Table 3, p. 14",
+      "evidence": {
+        "violations": {}
+      }
+    },
+    {
+      "name": "manuscript-degradation-monotone",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the framework's layer build-up is non-decreasing: (0.431, 0.487, 0.531, 0.539)",
+      "paper_anchor": "Table 3, p. 14",
+      "evidence": {
+        "sequence": [
+          0.431,
+          0.487,
+          0.531,
+          0.539
+        ]
+      }
+    },
+    {
+      "name": "manuscript-three-layer-counterpart",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the Table 2(b) footnote's three-layer counterpart is 0.531, matching the Table 3 cohort+cell+niche row, and the dropout-removed inference value 0.436 is lower",
+      "paper_anchor": "Table 2 panel (b), p. 13",
+      "evidence": {
+        "table3_value": 0.531,
+        "footnote_full": 0.531,
+        "footnote_reduced": 0.436
+      }
+    },
+    {
+      "name": "manuscript-readiness-prevalence-round-trip",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "0.196 over 148 targets is 29.008, i.e. an integer count of 29; the approved-family count of 41 therefore labels a different quantity",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "product": 29.008,
+        "nearest_integer": 29
+      }
+    },
+    {
+      "name": "manuscript-jensen-shannon-bound",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the reported JS divergence 0.118 is below its ln 2 ceiling and below the KL drop 0.521",
+      "paper_anchor": "Sec. 3.2, pp. 10-11",
+      "evidence": {
+        "js": 0.118,
+        "ceiling": 0.6931,
+        "kl_drop": 0.521
+      }
+    },
+    {
+      "name": "manuscript-dagger-rows-coincide",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 1 footnote: the two daggered rows land on the same AUPRC because their top-50 sets coincide; the tabulated values are 0.472 and 0.472",
+      "paper_anchor": "Table 1 footnote, p. 10",
+      "evidence": {
+        "differential_expression": 0.472,
+        "coexpression_modules": 0.472
+      }
+    },
+    {
+      "name": "manuscript-strongest-baseline-identification",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the strongest non-framework baseline on NDCG@20 is typed_graph_ranking; the manuscript names the heterogeneous knowledge-graph ranking model",
+      "paper_anchor": "Sec. 3.1, pp. 9-10",
+      "evidence": {
+        "identified": "typed_graph_ranking",
+        "value": 0.451
+      }
+    },
+    {
+      "name": "manuscript-keratinocyte-candidate-count",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 3.3 names five keratinocyte-carrying candidates; 5 of them appear in the Table 5 shortlist",
+      "paper_anchor": "Sec. 3.3, pp. 11-12",
+      "evidence": {
+        "named": [
+          "TYK2",
+          "IL1RL2",
+          "CCL20",
+          "TNFSF10",
+          "IL36G"
+        ],
+        "present": [
+          "TYK2",
+          "IL1RL2",
+          "CCL20",
+          "TNFSF10",
+          "IL36G"
+        ]
+      }
+    },
+    {
+      "name": "manuscript-programme-count",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 2.4 names 12 immune programmes; Sec. 2.1 states K = 12",
+      "paper_anchor": "Sec. 2.4, p. 6",
+      "evidence": {
+        "named": 12,
+        "stated": 12
+      }
+    },
+    {
+      "name": "manuscript-hyperparameter-round-trip",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the released defaults reproduce the reported lambda_1, lambda_2, lambda_3 and the training dropout rate: (0.5, 0.5, 0.25, 0.2)",
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "evidence": {
+        "lambda_immune": 0.5,
+        "lambda_readiness": 0.5,
+        "lambda_perturbation": 0.25,
+        "dropout_train": 0.2,
+        "batch_size": 32.0,
+        "epochs": 60.0
+      }
+    },
+    {
+      "name": "manuscript-mask-logit-notation",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Eq. (2) adds log m_{g,j} to the attention logits, so an unavailable token takes a logit of -inf. Algorithm 1 line 10 writes the same term as 'log M', a positive constant that would shift every logit equally and mask nothing.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5",
+      "evidence": {
+        "equation": "Eq. (2)",
+        "algorithm_step": "Algorithm 1 line 10",
+        "term_written": "log M"
+      }
+    },
+    {
+      "name": "manuscript-mask-index-space",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.1 defines the availability mask over the L tokens the encoder builds and writes m_{g,j} with j indexing that token axis; Algorithm 1 loops j over the M evidence layers and tests m_{g,j}. The two statements index the same symbol over different spaces.",
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "evidence": {
+        "section_2_1": "m_g in {0,1}^L",
+        "algorithm": "j = 1..M"
+      }
+    },
+    {
+      "name": "manuscript-context-token-duplication",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.3 states that the keystone layer is realised as the graph-context embedding, so it is one of the M = 4 layer tokens; Algorithm 1 builds a token per layer and then appends u_ctx(h_g) again, which yields five tokens for four layers.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5",
+      "evidence": {
+        "layers": 4,
+        "tokens_implied": 5
+      }
+    },
+    {
+      "name": "manuscript-table6-column-reference",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.7.1 refers to 'the cost figures in column 6 in table 6'. Table 6's sixth column is peak memory in gigabytes; the cost figures are the training hours (column 3) and the inference latency (column 4).",
+      "paper_anchor": "Sec. 2.7.1, p. 7",
+      "evidence": {
+        "column_6": "Mem. (GB)",
+        "cost_columns": "Training (h), Infer. (ms/gene)"
+      }
+    },
+    {
+      "name": "manuscript-figure1-baseline-caption",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Figure 1's legend plots the differential-expression baseline against typed-graph ranking, and its caption calls them 'the two most powerful baselines (non-framework)'. Table 1 makes differential expression the weakest configuration at NDCG@20 0.311.",
+      "paper_anchor": "Figure 1, p. 11",
+      "evidence": {
+        "plotted": [
+          "differential_expression",
+          "typed_graph_ranking"
+        ],
+        "ranked_top": [
+          "unconstrained_variant",
+          "immunotargetnet",
+          "typed_graph_ranking",
+          "foundation_encoder_similarity"
+        ],
+        "differential_expression_value": 0.311
+      }
+    },
+    {
+      "name": "manuscript-abstract-resource-count",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "the abstract enumerates 16 resources (eight cohorts, three single-cell, three spatial, two perturbation); Sec. 2.2 names a further four keystone resources (interaction network, gene-set collections, approved immune gene groups, drug-target and tractability annotations), so the abstract's enumeration covers the four evidence layers' non-keystone members only.",
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "evidence": {
+        "abstract_count": 16,
+        "keystone_resources": 4
+      }
+    },
+    {
+      "name": "manuscript-stability-prose-vs-table",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Sec. 3.4's framework means and fifth percentiles against Table 3; worst residual 0.0000",
+      "paper_anchor": "Sec. 3.4, pp. 12-14",
+      "evidence": {
+        "residuals": {
+          "cohort_resample": 0.0,
+          "pathway_holdout": 0.0,
+          "modality_dropout": 0.0
+        }
+      }
+    },
+    {
+      "name": "manuscript-table3-shape",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "Table 3's first seven rows are NDCG@20 and its last three are Kendall tau. The released reader reproduces the label order, and this check pins the column count so a revision that reorders them fails loudly.",
+      "paper_anchor": "Table 3, p. 14",
+      "evidence": {
+        "ndcg_rows": 7,
+        "tau_rows": 3,
+        "columns": [
+          5
+        ]
+      }
+    },
+    {
+      "name": "manuscript-readiness-outranks-baselines",
+      "category": "manuscript",
+      "status": "PASS",
+      "detail": "the framework's readiness AUPRC 0.664 exceeds every other row's maximum 0.615",
+      "paper_anchor": "Table 1, p. 10",
+      "evidence": {
+        "framework": 0.664,
+        "best_other": 0.615
+      }
+    },
+    {
+      "name": "manuscript-degree-control-values",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.4 reports a shortlist degree gap of 0.42 standard deviations, a graph-only gap of 1.87, and a degree-adjusted move from rank four to rank five. These need the interaction-degree table of the curated set, which is not public.",
+      "paper_anchor": "Sec. 3.4, pp. 12-14"
+    },
+    {
+      "name": "manuscript-per-candidate-cohort-positions",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.6 states every shortlisted candidate stays inside the top twenty in all eight cohorts with a worst position of eleven. The per-candidate per-cohort matrix is Supplementary Table S13, which is not distributed.",
+      "paper_anchor": "Sec. 3.6, pp. 15-16"
+    },
+    {
+      "name": "manuscript-calibration-triple",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.1 reports expected calibration errors of 0.041 for the framework, 0.118 for the rule-based filter and 0.184 for the prevalence baseline. These are Supplementary Table S8, which is not distributed.",
+      "paper_anchor": "Sec. 3.1, pp. 9-10"
+    },
+    {
+      "name": "manuscript-threshold-widths",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.6 tabulates shortlist behaviour at widths eight, twelve and twenty in Supplementary Table S13 panel (c); the table is not distributed.",
+      "paper_anchor": "Sec. 3.6, pp. 15-16"
+    },
+    {
+      "name": "manuscript-perturbation-reversal-detail",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.5 and Table 5 footnote report the perturbation-reversal index under four signature definitions in Supplementary Table S6; the table is not distributed.",
+      "paper_anchor": "Table 5 footnote, p. 17"
+    },
+    {
+      "name": "manuscript-per-cohort-mrr",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Table 2(b)'s footnote points at Supplementary Table S2 for per-cohort recovery broken out by mean reciprocal rank; the table is not distributed.",
+      "paper_anchor": "Table 2 panel (a), p. 13"
+    },
+    {
+      "name": "integrity-manifest-freshness",
+      "category": "provenance",
+      "status": "PASS",
+      "detail": "the shipped manifest matches the live tree entry for entry",
+      "evidence": {
+        "files": 134,
+        "changed": [],
+        "changed_count": 0,
+        "missing": [],
+        "missing_count": 0,
+        "unlisted": [],
+        "unlisted_count": 0,
+        "digest_matches": true
+      }
+    }
+  ],
+  "gates": [
+    {
+      "gate": "ruff",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "gate": "black",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "gate": "isort",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "gate": "mypy",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "gate": "pytest",
+      "exit_code": 0,
+      "passed": true
+    }
+  ],
+  "code_failures": [],
+  "manuscript_discrepancies": [
+    {
+      "name": "manuscript-cellstate-withholding-present",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 3.3 reports withholding the cell-state layer as NDCG@20 0.512, but Table 2(b) carries [0.497, 0.502, 0.526, 0.534, 0.539, 0.541] and Table 4 carries no cell-state row at all; the value appears in the prose only.",
+      "paper_anchor": "Sec. 3.3, pp. 11-12",
+      "evidence": {
+        "reported": 0.512,
+        "table2b_values": [
+          0.497,
+          0.502,
+          0.526,
+          0.534,
+          0.539,
+          0.541
+        ],
+        "table4_values": [
+          0.487,
+          0.497,
+          0.502,
+          0.519,
+          0.526,
+          0.534,
+          0.539,
+          0.541,
+          0.542
+        ],
+        "appears_in_tables": false
+      }
+    },
+    {
+      "name": "manuscript-mask-logit-notation",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Eq. (2) adds log m_{g,j} to the attention logits, so an unavailable token takes a logit of -inf. Algorithm 1 line 10 writes the same term as 'log M', a positive constant that would shift every logit equally and mask nothing.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5",
+      "evidence": {
+        "equation": "Eq. (2)",
+        "algorithm_step": "Algorithm 1 line 10",
+        "term_written": "log M"
+      }
+    },
+    {
+      "name": "manuscript-mask-index-space",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.1 defines the availability mask over the L tokens the encoder builds and writes m_{g,j} with j indexing that token axis; Algorithm 1 loops j over the M evidence layers and tests m_{g,j}. The two statements index the same symbol over different spaces.",
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "evidence": {
+        "section_2_1": "m_g in {0,1}^L",
+        "algorithm": "j = 1..M"
+      }
+    },
+    {
+      "name": "manuscript-context-token-duplication",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.3 states that the keystone layer is realised as the graph-context embedding, so it is one of the M = 4 layer tokens; Algorithm 1 builds a token per layer and then appends u_ctx(h_g) again, which yields five tokens for four layers.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5",
+      "evidence": {
+        "layers": 4,
+        "tokens_implied": 5
+      }
+    },
+    {
+      "name": "manuscript-table6-column-reference",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Sec. 2.7.1 refers to 'the cost figures in column 6 in table 6'. Table 6's sixth column is peak memory in gigabytes; the cost figures are the training hours (column 3) and the inference latency (column 4).",
+      "paper_anchor": "Sec. 2.7.1, p. 7",
+      "evidence": {
+        "column_6": "Mem. (GB)",
+        "cost_columns": "Training (h), Infer. (ms/gene)"
+      }
+    },
+    {
+      "name": "manuscript-figure1-baseline-caption",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "Figure 1's legend plots the differential-expression baseline against typed-graph ranking, and its caption calls them 'the two most powerful baselines (non-framework)'. Table 1 makes differential expression the weakest configuration at NDCG@20 0.311.",
+      "paper_anchor": "Figure 1, p. 11",
+      "evidence": {
+        "plotted": [
+          "differential_expression",
+          "typed_graph_ranking"
+        ],
+        "ranked_top": [
+          "unconstrained_variant",
+          "immunotargetnet",
+          "typed_graph_ranking",
+          "foundation_encoder_similarity"
+        ],
+        "differential_expression_value": 0.311
+      }
+    },
+    {
+      "name": "manuscript-abstract-resource-count",
+      "category": "manuscript",
+      "status": "FAIL",
+      "detail": "the abstract enumerates 16 resources (eight cohorts, three single-cell, three spatial, two perturbation); Sec. 2.2 names a further four keystone resources (interaction network, gene-set collections, approved immune gene groups, drug-target and tractability annotations), so the abstract's enumeration covers the four evidence layers' non-keystone members only.",
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "evidence": {
+        "abstract_count": 16,
+        "keystone_resources": 4
+      }
+    }
+  ],
+  "outstanding": [
+    {
+      "name": "cohort-table1-recovery",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 1 NDCG@20, MRR, AUROC, Top-50, AUPRC and KL on the held-out curated set: the eight expression cohorts are public but their series matrices are 10-125 MB and are not redistributed with the release, so this value cannot be produced from the shipped tree",
+      "paper_anchor": "Table 1, p. 10"
+    },
+    {
+      "name": "cohort-table2-per-cohort",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 2(a) per-cohort leave-one-cohort-out recovery: the eight expression cohorts are public but their series matrices are 10-125 MB and are not redistributed with the release, so this value cannot be produced from the shipped tree",
+      "paper_anchor": "Table 2 panel (a), p. 13"
+    },
+    {
+      "name": "cohort-table6-cost",
+      "category": "execution",
+      "status": "NOT_RUN",
+      "detail": "Table 6 training hours and parameter counts were measured on the reported single 80 GB accelerator, which this host is not",
+      "paper_anchor": "Table 6, p. 18"
+    },
+    {
+      "name": "container-build",
+      "category": "execution",
+      "status": "BLOCKED",
+      "detail": "no container runtime is available on this host, so the image build cannot be exercised"
+    },
+    {
+      "name": "container-runtime",
+      "category": "hygiene",
+      "status": "BLOCKED",
+      "detail": "no container runtime on this host; the image build is recorded BLOCKED rather than assumed"
+    },
+    {
+      "name": "manuscript-degree-control-values",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.4 reports a shortlist degree gap of 0.42 standard deviations, a graph-only gap of 1.87, and a degree-adjusted move from rank four to rank five. These need the interaction-degree table of the curated set, which is not public.",
+      "paper_anchor": "Sec. 3.4, pp. 12-14"
+    },
+    {
+      "name": "manuscript-per-candidate-cohort-positions",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.6 states every shortlisted candidate stays inside the top twenty in all eight cohorts with a worst position of eleven. The per-candidate per-cohort matrix is Supplementary Table S13, which is not distributed.",
+      "paper_anchor": "Sec. 3.6, pp. 15-16"
+    },
+    {
+      "name": "manuscript-calibration-triple",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.1 reports expected calibration errors of 0.041 for the framework, 0.118 for the rule-based filter and 0.184 for the prevalence baseline. These are Supplementary Table S8, which is not distributed.",
+      "paper_anchor": "Sec. 3.1, pp. 9-10"
+    },
+    {
+      "name": "manuscript-threshold-widths",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.6 tabulates shortlist behaviour at widths eight, twelve and twenty in Supplementary Table S13 panel (c); the table is not distributed.",
+      "paper_anchor": "Sec. 3.6, pp. 15-16"
+    },
+    {
+      "name": "manuscript-perturbation-reversal-detail",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Sec. 3.5 and Table 5 footnote report the perturbation-reversal index under four signature definitions in Supplementary Table S6; the table is not distributed.",
+      "paper_anchor": "Table 5 footnote, p. 17"
+    },
+    {
+      "name": "manuscript-per-cohort-mrr",
+      "category": "manuscript",
+      "status": "NOT_RUN",
+      "detail": "Table 2(b)'s footnote points at Supplementary Table S2 for per-cohort recovery broken out by mean reciprocal rank; the table is not distributed.",
+      "paper_anchor": "Table 2 panel (a), p. 13"
+    }
+  ],
+  "interpretation": "A failing check in the manuscript family records a disagreement inside the article's own tables or text, not a defect in this release. A failing check in a code family is a defect in the release. Every table value that needs the manuscript's cohorts stays NOT_RUN because those series matrices are not redistributed."
+}

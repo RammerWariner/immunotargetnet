@@ -1,0 +1,6 @@
+# Blocked bootstrap of Sec. 2.7.3 with gene blocks.
+name: supplementary_bootstrap
+parents: [study/primary, evaluation/bootstrap]
+resamples: 1000
+block_unit: gene
+report_paired_difference: true

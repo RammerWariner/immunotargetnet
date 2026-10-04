@@ -1,0 +1,19 @@
+# for unit-test smoke only; do not use for reporting
+name: smoke
+seed: 20260101
+seeds: 1
+epochs: 2
+batch_size: 8
+learning_rate: 0.005
+weight_decay: 0.0
+modality_dropout_rate: 0.2
+lambda_immune: 0.5
+lambda_readiness: 0.5
+lambda_perturbation: 0.25
+model_dim: 16
+n_graph_rounds: 1
+n_readiness_tiers: 2
+validation_share: 0.15
+bootstrap_resamples: 50
+stability_draws: 2
+parents: [study/primary]

@@ -1,0 +1,9 @@
+numpy>=1.26,<3
+scipy>=1.11
+torch>=2.1
+PyYAML>=6.0
+pytest>=8.0
+ruff>=0.6
+black>=24.0
+isort>=5.13
+mypy>=1.11

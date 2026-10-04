@@ -1,0 +1,5 @@
+# Table 4 row: minus_modality_dropout.
+name: ablation_no_modality_dropout
+configuration: minus_modality_dropout
+parents: [study/primary]
+modality_dropout_rate: 0.0

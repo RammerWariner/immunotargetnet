@@ -1,0 +1,5 @@
+# Table 4 row: minus_graph_tower.
+name: ablation_no_graph_tower
+configuration: minus_graph_tower
+parents: [study/primary]
+graph_enabled: false

@@ -1,0 +1,5 @@
+# Table 4 row: minus_perturbation_objective.
+name: ablation_no_perturbation_objective
+configuration: minus_perturbation_objective
+parents: [study/primary]
+lambda_perturbation: 0.0

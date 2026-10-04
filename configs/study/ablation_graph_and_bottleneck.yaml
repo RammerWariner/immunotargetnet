@@ -1,0 +1,6 @@
+# Table 4 row: minus_graph_minus_bottleneck.
+name: ablation_graph_and_bottleneck
+configuration: minus_graph_minus_bottleneck
+parents: [study/primary]
+constrained: false
+graph_enabled: false

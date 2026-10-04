@@ -1,0 +1,5 @@
+# Table 4 row: minus_niche_layer.
+name: ablation_no_niche_layer
+configuration: minus_niche_layer
+parents: [study/primary]
+keep_layers: [0, 1, 3]

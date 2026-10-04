@@ -1,0 +1,7 @@
+# Availability-mask handling (Sec. 2.3).
+availability:
+  missing_layer_fraction: 0.12
+  guarantee_non_empty: true
+dropout:
+  train_rate: 0.2
+  inference_rate: 0.0

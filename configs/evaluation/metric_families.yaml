@@ -1,0 +1,14 @@
+# Comparison families and their sizes, as Sec. 2.7.3 requires every table to state.
+families:
+  recovery_and_readiness:
+    members: 7
+    reference: typed graph ranking
+  constraint_axis:
+    members: 3
+    reference: unconstrained variant
+  per_cohort:
+    members: 24
+    reference: typed graph ranking
+  ablation:
+    members: 8
+    reference: full framework

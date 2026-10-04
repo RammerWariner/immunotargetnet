@@ -1,0 +1,9 @@
+# The manuscript reports a variable learning rate without naming the schedule.
+schedule: cosine
+warmup_fraction: 0.05
+min_factor: 0.01
+epochs: 60
+early_stopping:
+  monitor: validation_fidelity
+  patience: 10
+  min_delta: 0.0001

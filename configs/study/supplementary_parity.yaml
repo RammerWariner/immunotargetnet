@@ -1,0 +1,7 @@
+# The single pre-specified primary comparison of Sec. 2.6.
+name: supplementary_parity
+parents: [study/primary, evaluation/protocol]
+comparison: paired difference against the unconstrained variant
+test: two one-sided tests
+margin: 0.010
+level: 0.90

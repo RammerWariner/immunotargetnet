@@ -1,0 +1,5 @@
+# Table 4 row: minus_bottleneck.
+name: ablation_no_bottleneck
+configuration: minus_bottleneck
+parents: [study/primary]
+constrained: false

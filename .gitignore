@@ -1,0 +1,20 @@
+# Anchor every runtime root at the top of the tree: an unanchored "data/" would also
+# exclude src/immunotargetnet/data/ and configs/data/ from the commit.
+/data/
+/runs/
+/models/
+/artifacts/
+/build/
+/dist/
+*.egg-info/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.DS_Store
+*.pt
+!assets/*.pt

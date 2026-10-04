@@ -1,0 +1,5 @@
+# Per-cohort reporting of Sec. 2.7.1.
+name: supplementary_per_cohort
+parents: [study/primary]
+folds: leave_one_cohort_out
+report_per_cohort: true

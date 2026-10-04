@@ -1,0 +1,17 @@
+name: immunotargetnet
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - numpy>=1.26
+  - scipy>=1.11
+  - pyyaml>=6.0
+  - pytest>=8.0
+  - pip
+  - pip:
+      - torch>=2.1
+      - ruff>=0.6
+      - black>=24.0
+      - isort>=5.13
+      - mypy>=1.11

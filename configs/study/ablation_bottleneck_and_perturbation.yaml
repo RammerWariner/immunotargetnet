@@ -1,0 +1,6 @@
+# Table 4 row: minus_bottleneck_minus_perturbation.
+name: ablation_bottleneck_and_perturbation
+configuration: minus_bottleneck_minus_perturbation
+parents: [study/primary]
+constrained: false
+lambda_perturbation: 0.0

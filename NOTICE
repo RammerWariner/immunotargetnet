@@ -1,0 +1,63 @@
+ImmunoTargetNet third-party notices
+
+This release is the code accompanying the manuscript "ImmunoTargetNet: A Multimodal
+Multi-Omics Framework for Immune-Related Target Prioritisation in Psoriasis". The MIT
+licence above covers the source in this repository. The external resources listed below
+keep their own terms, and none of their data is bundled here beyond the derived tables
+described in each entry.
+
+Virtual screening and annotation resources
+------------------------------------------
+Open Targets Platform
+  Used for: interaction edges, pathway membership and tractability annotations of the
+  keystone evidence layer, read through the public GraphQL API.
+  Licence: platform data is released under CC0 1.0; the contributing sources named in each
+  edge's sourceDatabase field keep their own terms.
+  Source: https://platform.opentargets.org
+  API: https://api.platform.opentargets.org/api/v4/graphql
+
+STRING
+  Used for: the protein association network behind the interaction edges. The snapshot
+  records the originating database of every edge, and STRING scores are the edge weights.
+  Licence: STRING data is released under CC BY 4.0; academic use is free.
+  Source: https://string-db.org
+
+Molecular Signatures Database (MSigDB)
+  Used for: the immune gene-set collections from which the twelve programmes of Sec. 2.4
+  are assembled (C5 GO biological process, C2 Reactome, H hallmark), release 2023.2.Hs.
+  Licence: MSigDB terms of use; the full corpus requires registration, the three
+  collections used here are freely downloadable.
+  Source: https://www.gsea-msigdb.org/gsea/msigdb/
+
+Gene expression omnibus series
+------------------------------
+Eight expression cohorts (GSE53552, GSE30999, GSE182740, GSE69967, GSE85034, GSE201827,
+GSE212836, GSE55201), three single-cell resources (GSE254707, GSE176509, GSE173706) and
+three spatial resources (GSE206391, GSE310145, GSE299256) are public GEO series. They are
+not redistributed here; only their accessions, contrast assignment and reported sample
+counts are recorded. Each series keeps the terms its submitters set.
+  Source: https://www.ncbi.nlm.nih.gov/geo/
+
+LINCS L1000 and the Connectivity Map
+  Used as the intended source of the compound perturbation reference behind the
+  perturbation-consistency term. The resource is not redistributed and the deposited
+  signatures are not reachable without registration, so the perturbation-reversal index in
+  this release is part of the declared construct rather than a read of that resource.
+  Source: https://clue.io
+
+DepMap
+  Used as the intended source of the genome-wide loss-of-function dependency map behind
+  the perturbation evidence layer. The portal was reachable during preparation and no
+  dependency table is bundled.
+  Source: https://depmap.org/portal/
+
+Python dependencies
+-------------------
+numpy (BSD-3-Clause), scipy (BSD-3-Clause), torch (BSD-3-Clause), PyYAML (MIT),
+pytest (MIT), ruff (MIT), black (MIT), isort (MIT), mypy (MIT).
+
+Marker panel
+------------
+The cell-population and tissue-compartment marker lists in
+src/immunotargetnet/evidence/markers.py are canonical published markers collected by the
+authors; no third-party marker table is redistributed.

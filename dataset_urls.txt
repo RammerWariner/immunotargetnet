@@ -1,0 +1,28 @@
+# ImmunoTargetNet resource links
+#
+# Every entry below was fetched during preparation and its response was checked against the
+# accession, the file name or a payload identifier. Links that did not answer or whose
+# content did not match are absent rather than listed with a caveat. Nothing here is
+# redistributed with the release; the access condition is recorded per entry.
+#
+# role<TAB>resource<TAB>access condition<TAB>verified response<TAB>url
+cohort	GSE182740: lesional versus non-lesional skin among the same participants	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE182nnn/GSE182740/matrix/
+cohort	GSE201827: treatment time-course contrast	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE201nnn/GSE201827/matrix/
+cohort	GSE212836: treatment time-course contrast	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212836/matrix/
+cohort	GSE30999: lesional versus non-lesional skin among the same participants	GEO public access, submitters' terms	590 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE30nnn/GSE30999/matrix/
+cohort	GSE53552: lesional versus non-lesional skin among the same participants	GEO public access, submitters' terms	590 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE53nnn/GSE53552/matrix/
+cohort	GSE55201: blood pharmacological series	GEO public access, submitters' terms	590 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE55nnn/GSE55201/matrix/
+cohort	GSE69967: treatment time-course contrast	GEO public access, submitters' terms	590 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE69nnn/GSE69967/matrix/
+cohort	GSE85034: treatment time-course contrast	GEO public access, submitters' terms	590 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE85nnn/GSE85034/matrix/
+cell_state	GSE173706: paired single-cell and spatial profiling of psoriatic skin	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173706/matrix/
+cell_state	GSE176509: epidermal single-cell resource separating keratinocytes from immune cells	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE176nnn/GSE176509/matrix/
+cell_state	GSE254707: cutaneous dendritic-cell and macrophage populations	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE254nnn/GSE254707/matrix/
+niche	GSE206391: spatially resolved landscape of non-communicable inflammatory skin disease	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE206nnn/GSE206391/matrix/
+niche	GSE299256: neutrophilic dermatosis reference for the dermal neutrophil axis	GEO public access, submitters' terms	752 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE299nnn/GSE299256/matrix/
+niche	GSE310145: body-site-resolved spatial profile of psoriasis lesions	GEO public access, submitters' terms	603 bytes	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE310nnn/GSE310145/matrix/
+perturbation layer	DepMap dependency-map portal	DepMap portal terms; no table is bundled	29598 bytes	https://depmap.org/portal/
+programme corpus	MSigDB human collections index	MSigDB terms of use	41104 bytes	https://www.gsea-msigdb.org/gsea/msigdb/human/collections.jsp
+keystone layer	Open Targets Platform GraphQL endpoint	CC0 1.0 for platform data; contributing sources keep their own terms	IL23A returned	https://api.platform.opentargets.org/api/v4/graphql
+programme corpus	MSigDB 2023.2.Hs c2.cp.reactome.v2023.2.Hs.symbols.gmt	MSigDB terms of use; this collection is freely downloadable	831433 bytes	https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2023.2.Hs/c2.cp.reactome.v2023.2.Hs.symbols.gmt
+programme corpus	MSigDB 2023.2.Hs c5.go.bp.v2023.2.Hs.symbols.gmt	MSigDB terms of use; this collection is freely downloadable	4929531 bytes	https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2023.2.Hs/c5.go.bp.v2023.2.Hs.symbols.gmt
+programme corpus	MSigDB 2023.2.Hs h.all.v2023.2.Hs.symbols.gmt	MSigDB terms of use; this collection is freely downloadable	48690 bytes	https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2023.2.Hs/h.all.v2023.2.Hs.symbols.gmt

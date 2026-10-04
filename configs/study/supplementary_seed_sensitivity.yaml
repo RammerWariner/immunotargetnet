@@ -1,0 +1,6 @@
+# Five independent runs of Sec. 2.7.4.
+name: supplementary_seed_sensitivity
+parents: [study/primary]
+seeds: 5
+report_per_seed: true
+report_spread: true

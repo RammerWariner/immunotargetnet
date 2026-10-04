@@ -1,0 +1,22 @@
+# Primary configuration. Defaults equal the reported schedule of Sec. 2.1.
+name: primary
+seed: 20260101
+seeds: 5
+epochs: 60
+batch_size: 32
+learning_rate: 0.001
+weight_decay: 0.01
+modality_dropout_rate: 0.2
+inference_dropout_rate: 0.0
+lambda_immune: 0.5
+lambda_readiness: 0.5
+lambda_perturbation: 0.25
+model_dim: 32
+n_graph_rounds: 2
+n_readiness_tiers: 2
+constrained: true
+graph_enabled: true
+validation_share: 0.15
+bootstrap_resamples: 1000
+stability_draws: 25
+parents: [bottleneck/attention, training/optimiser, training/schedule, evaluation/protocol]

@@ -1,0 +1,442 @@
+{
+  "package": "immunotargetnet",
+  "manuscript": {
+    "title": "ImmunoTargetNet: A Multimodal Multi-Omics Framework for Immune-Related Target Prioritisation in Psoriasis",
+    "venue": "Frontiers (structured abstract, Frontiers citation style and running footer)",
+    "figures": [
+      "Figure 1",
+      "Figure 2",
+      "Figure 3",
+      "Figure 4"
+    ],
+    "tables": [
+      "Table 1",
+      "Table 2",
+      "Table 3",
+      "Table 4",
+      "Table 5",
+      "Table 6"
+    ],
+    "equations": [
+      "Eq. (1)",
+      "Eq. (2)",
+      "Eq. (3)",
+      "Eq. (4)"
+    ],
+    "algorithms": [
+      "Algorithm 1",
+      "Algorithm 2"
+    ],
+    "supplementary": "Tables S1-S13 are referenced but not distributed with the manuscript"
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "statement": "The total objective combines a listwise ranking loss with three weighted terms.",
+      "paper_anchor": "Sec. 2.1, p. 3 / Eq. (1)",
+      "code_locations": [
+        "src/immunotargetnet/objectives/total.py:total_objective",
+        "src/immunotargetnet/objectives/total.py:listwise_ranking_loss",
+        "src/immunotargetnet/objectives/total.py:immune_relevance_divergence",
+        "src/immunotargetnet/objectives/total.py:readiness_cross_entropy",
+        "src/immunotargetnet/objectives/total.py:perturbation_consistency"
+      ],
+      "implemented_as": "L_rank + 0.5 L_imm + 0.5 L_read + 0.25 L_pert",
+      "verified_by": [
+        "loss-and-backward",
+        "manuscript-hyperparameter-round-trip",
+        "kl-js-reference"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C02",
+      "statement": "Availability-masked attention adds log m to the logits so an unavailable token takes no weight.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5 / Eq. (2)",
+      "code_locations": [
+        "src/immunotargetnet/bottleneck/attention.py:AvailabilityMaskedBottleneck.forward",
+        "src/immunotargetnet/bottleneck/dropout.py:modality_dropout"
+      ],
+      "implemented_as": "additive -inf on unavailable tokens, softmax over available tokens only",
+      "verified_by": [
+        "masked-attention-reference",
+        "availability-mechanism",
+        "modality-dropout-non-empty"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C03",
+      "statement": "The bottleneck projects the pooled state onto the K = 12 immune-programme simplex, the sole route to the ranking head.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5 / Eq. (3), Algorithm 1 line 12",
+      "code_locations": [
+        "src/immunotargetnet/bottleneck/attention.py:AvailabilityMaskedBottleneck",
+        "src/immunotargetnet/evidence/schema.py:PROGRAMME_KEYS"
+      ],
+      "implemented_as": "mean-pooled attention output through softmax(W_s z_g) over twelve programmes",
+      "verified_by": [
+        "forward-shapes",
+        "panel-shapes",
+        "manuscript-programme-count"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C04",
+      "statement": "Edge-type-aware message passing weights each edge type on the simplex over two rounds.",
+      "paper_anchor": "Sec. 2.5, p. 6 / Eq. (4), Algorithm 2 steps 2-7",
+      "code_locations": [
+        "src/immunotargetnet/graph/message_passing.py:TypedGraphTower",
+        "src/immunotargetnet/graph/assembly.py:build_graph_batch"
+      ],
+      "implemented_as": "per-type transform and attention, type weights on the simplex, two rounds",
+      "verified_by": [
+        "graph-assembly",
+        "segment-softmax-reference",
+        "annotation-embeddings-frozen"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C05",
+      "statement": "A shared layer carries two heads: a relevance head and a readiness head.",
+      "paper_anchor": "Sec. 2.5, p. 6 / Algorithm 2 steps 8-9",
+      "code_locations": [
+        "src/immunotargetnet/graph/heads.py:DualHeads",
+        "src/immunotargetnet/model.py:TargetPrioritiser.encode"
+      ],
+      "implemented_as": "z_g = [s_g; h_g], ReLU(W_0 z_g), sigmoid relevance and a tier softmax for readiness",
+      "verified_by": [
+        "forward-shapes",
+        "auroc-ece-reference"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C06",
+      "statement": "AdamW at a learning rate of 1e-3, batch size 32, 60 epochs, availability-mask dropout 0.2 in training and 0 at inference, early stopping on validation fidelity.",
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "code_locations": [
+        "src/immunotargetnet/training/optim.py:build_optimiser",
+        "src/immunotargetnet/training/loop.py:TrainingConfig",
+        "src/immunotargetnet/training/earlystop.py:EarlyStopping"
+      ],
+      "implemented_as": "released defaults equal the reported schedule; the smoke file is reduced and labelled",
+      "verified_by": [
+        "config-schedule-integrity",
+        "minimal-training-loop"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C07",
+      "statement": "Splits are made by cohort and never by sample; every gene sits in either the training labels or the finalised target set.",
+      "paper_anchor": "Sec. 2.7.1, p. 7",
+      "code_locations": [
+        "src/immunotargetnet/protocols/splits.py:leave_one_cohort_out",
+        "src/immunotargetnet/protocols/splits.py:label_split",
+        "src/immunotargetnet/protocols/splits.py:verify_no_sample_leakage"
+      ],
+      "implemented_as": "one fold per cohort plus disjoint training, validation and held-out label blocks",
+      "verified_by": [
+        "label-split-integrity",
+        "cohort-fold-leakage"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C08",
+      "statement": "Pathway holdout masks the curated-target graph edges so holdout scores measure transfer, with a random-subset control matched on the number of genes withheld.",
+      "paper_anchor": "Sec. 2.7.1, p. 7 / Sec. 3.4",
+      "code_locations": [
+        "src/immunotargetnet/protocols/perturbation.py:pathway_holdout",
+        "src/immunotargetnet/protocols/perturbation.py:random_subset_control",
+        "src/immunotargetnet/protocols/study.py:gene_subset_edge_keep"
+      ],
+      "implemented_as": "annotation-family edges removed at inference; the control removes the matched gene count at random",
+      "verified_by": [
+        "study-pipeline"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C09",
+      "statement": "Intervals are 95% blocked-bootstrap intervals from 1000 resamples with genes as blocks; comparisons are paired two-tailed t tests with Holm correction inside each family.",
+      "paper_anchor": "Sec. 2.7.3, p. 8",
+      "code_locations": [
+        "src/immunotargetnet/stats/bootstrap.py:blocked_bootstrap_difference",
+        "src/immunotargetnet/stats/bootstrap.py:gene_blocks",
+        "src/immunotargetnet/stats/holm.py:holm_step_down"
+      ],
+      "implemented_as": "gene-block bootstrap plus a Holm step-down carrying the running maximum",
+      "verified_by": [
+        "bootstrap-interval-reference",
+        "holm-reference"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C10",
+      "statement": "Parity is tested with two one-sided tests: the 90% paired-difference interval must sit inside the +-0.010 margin, and overlapping marginal intervals are not the test.",
+      "paper_anchor": "Sec. 2.6, p. 7",
+      "code_locations": [
+        "src/immunotargetnet/stats/equivalence.py:two_one_sided_test",
+        "src/immunotargetnet/stats/equivalence.py:paired_difference_interval"
+      ],
+      "implemented_as": "percentile interval of the paired mean difference against the pre-specified band",
+      "verified_by": [
+        "tost-reference",
+        "manuscript-parity-point-and-band"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C11",
+      "statement": "Readiness is measured by AUPRC, AUROC and expected calibration error against the platform tractability annotations.",
+      "paper_anchor": "Sec. 2.7.2, p. 8",
+      "code_locations": [
+        "src/immunotargetnet/metrics/discrimination.py:area_under_precision_recall",
+        "src/immunotargetnet/metrics/discrimination.py:area_under_roc",
+        "src/immunotargetnet/metrics/discrimination.py:expected_calibration_error",
+        "src/immunotargetnet/evidence/schema.py:GeneAnnotation.clinical_stage"
+      ],
+      "implemented_as": "clinical-stage tractability buckets form the readiness label; ranking metrics are tie-aware",
+      "verified_by": [
+        "auroc-ece-reference"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C12",
+      "statement": "Attribution faithfulness is the deletion curve difference between removing high- and low-attribution evidence.",
+      "paper_anchor": "Sec. 2.7.2, p. 8",
+      "code_locations": [
+        "src/immunotargetnet/metrics/attribution.py:deletion_curve",
+        "src/immunotargetnet/protocols/evaluation.py:deletion_faithfulness"
+      ],
+      "implemented_as": "the model is re-run with the attributed layers withheld, and the trapezoid area between the two curves is reported",
+      "verified_by": [
+        "deletion-curve-reference"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C13",
+      "statement": "Rank stability is a Kendall tau between the full-panel ranking and the ranking under cohort resampling, pathway holdout and modality dropout, with the fifth percentile beside the mean.",
+      "paper_anchor": "Sec. 2.7.2, p. 8 / Sec. 3.4",
+      "code_locations": [
+        "src/immunotargetnet/metrics/stability.py:kendall_tau_b",
+        "src/immunotargetnet/metrics/stability.py:stability_over_resamples",
+        "src/immunotargetnet/protocols/study.py:perturbed_scores"
+      ],
+      "implemented_as": "three perturbation families rerun the frozen model; ties are corrected",
+      "verified_by": [
+        "kendall-tau-reference",
+        "study-pipeline"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C14",
+      "statement": "Cohorts are the eight public expression series, three single-cell resources and three spatial resources of which two profile psoriasis.",
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "code_locations": [
+        "src/immunotargetnet/evidence/cohort.py:COHORT_SPECS",
+        "src/immunotargetnet/evidence/cellstate.py:CELL_STATE_DATASETS",
+        "src/immunotargetnet/evidence/niche.py:NICHE_DATASETS",
+        "src/immunotargetnet/evidence/pathways.py:PathwayTable"
+      ],
+      "implemented_as": "accessions, contrast assignment and the reference-only role of the cross-disease resource are declared",
+      "verified_by": [
+        "assets-readable",
+        "manuscript-cohort-sample-sum"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C15",
+      "statement": "The candidate pool is protein-coding genes plus a curated non-coding list on the IL23/IL17 axis.",
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "code_locations": [
+        "src/immunotargetnet/evidence/programmes.py:NONCODING_AXIS_GENES",
+        "src/immunotargetnet/evidence/fixture.py:candidate_pool"
+      ],
+      "implemented_as": "the pool is the programme corpus intersected with the frozen annotation snapshot",
+      "verified_by": [
+        "panel-shapes"
+      ],
+      "status": "partially-specified"
+    },
+    {
+      "claim_id": "C16",
+      "statement": "Frozen encoders are an intentional decision: fine-tuning would spoil the pre-trained cell-state and niche representations.",
+      "paper_anchor": "Sec. 2.3, pp. 4-5",
+      "code_locations": [
+        "src/immunotargetnet/encoders/frozen.py:FrozenEncoderSuite",
+        "src/immunotargetnet/bottleneck/attention.py:ModalityProjection"
+      ],
+      "implemented_as": "encoders are parameter-free feature maps; only the projection carries weights",
+      "verified_by": [
+        "encoder-widths",
+        "determinism-under-seed"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C17",
+      "statement": "The degree-matched control removes the share of a score explained by interaction degree.",
+      "paper_anchor": "Sec. 3.4, pp. 12-14",
+      "code_locations": [
+        "src/immunotargetnet/graph/degree.py:fit_degree_control",
+        "src/immunotargetnet/graph/degree.py:degree_gap"
+      ],
+      "implemented_as": "ordinary least squares on the standardised degree, with the residual kept as the adjusted score",
+      "verified_by": [
+        "study-pipeline"
+      ],
+      "status": "implemented"
+    },
+    {
+      "claim_id": "C18",
+      "statement": "The shortlist states the missing evidence beside every nomination.",
+      "paper_anchor": "Sec. 3.6, pp. 15-16",
+      "code_locations": [
+        "src/immunotargetnet/cli/prioritise.py:missing_evidence_note",
+        "src/immunotargetnet/protocols/study.py:StudyRunner._shortlist"
+      ],
+      "implemented_as": "each nomination carries its carrying programme, layer attribution and absent-evidence note",
+      "verified_by": [
+        "study-pipeline"
+      ],
+      "status": "implemented"
+    }
+  ],
+  "deviations": [
+    {
+      "paper_anchor": "Sec. 2.3, pp. 4-5 / Algorithm 1 line 10",
+      "departure": "Eq. (2) writes the additive mask as log m_{g,j} and Algorithm 1 line 10 writes the same term as log M. The release implements the Eq. (2) form, because a positive constant cannot mask anything.",
+      "justification": "the two statements cannot both hold; the equation is the one the ranking head depends on."
+    },
+    {
+      "paper_anchor": "Sec. 2.1, p. 3 / Sec. 2.3",
+      "departure": "Sec. 2.1 gives the availability mask over the L encoder tokens while Algorithm 1 loops j over the M evidence layers. The release indexes the mask over the four evidence layers and derives per-token availability from it.",
+      "justification": "a four-layer index keeps the mask and the layer count of Sec. 2.1 consistent, and it is the index space Algorithm 1 actually reads."
+    },
+    {
+      "paper_anchor": "Sec. 2.3, pp. 4-5 / Algorithm 1 line 9",
+      "departure": "Sec. 2.3 states that the keystone layer is the graph-context embedding, so Algorithm 1's extra append of a context token would duplicate it. The release builds four layer tokens and does not append a fifth.",
+      "justification": "four tokens preserve the M = 4 layer budget of Sec. 2.1 and the token count the attention of Eq. (2) is defined over."
+    },
+    {
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "departure": "The readiness head is a softmax over readiness tiers while L_read is a binary cross-entropy against tractability annotations. The release fixes the tier count at two, which makes the softmax and the binary cross-entropy the same object.",
+      "justification": "the paper does not state the tier count; two is the value that removes the contradiction without changing the printed architecture."
+    },
+    {
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "departure": "The curated non-coding list on the IL23/IL17 axis is not published. The release ships a named twelve-gene curation in evidence/programmes.py.",
+      "justification": "the pool needs a non-coding member to be the object Sec. 2.1 describes; the curation is declared rather than inferred."
+    },
+    {
+      "paper_anchor": "Sec. 2.4, p. 6",
+      "departure": "The twelve programmes are assembled from named gene-set collections of the public immune corpora (GO biological process, Reactome, Hallmark) instead of the unpublished curated list.",
+      "justification": "Sec. 2.4 states the programmes were assembled from public immune gene-set collections; the collection identifiers are pinned so the table is rebuildable."
+    },
+    {
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "departure": "The eight expression cohorts, the single-cell resources and the spatial resources are public but are not redistributed. The release ships a schema-compatible fixture whose declared construct generates the panel, and takes the programme table, the tractability labels and the typed edges from the frozen keystone snapshot.",
+      "justification": "no manuscript table value is claimed from the fixture; every cohort-level value is reported NOT_RUN with the reason recorded."
+    },
+    {
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "departure": "The compound perturbation reference of the perturbation layer is not redistributable, so the perturbation-reversal index is part of the declared construct rather than a read of that resource.",
+      "justification": "the consistency term keeps its structure and its sign semantics; only the index source departs."
+    },
+    {
+      "paper_anchor": "Sec. 2.2, pp. 3-4",
+      "departure": "Interaction edges are read through the platform's interactions schema, whose sourceDatabase field names the originating resource, rather than through a direct download of the interaction network.",
+      "justification": "the frozen snapshot records the originating database of every edge, so the edge typing is preserved and auditable."
+    },
+    {
+      "paper_anchor": "Sec. 2.5, p. 6",
+      "departure": "The interaction resolver returned no edge during the capture sweep, so the frozen snapshot's interaction family is empty and the typed graph's gene-to-gene structure is absent; the graph keeps its annotation families, which include the pathway nodes of the pathway corpus.",
+      "justification": "the empty sweep is recorded in the snapshot itself with the query count and the budget that bounded it, so a reader sees what was collected rather than an assumption; the refresh path repopulates the family."
+    },
+    {
+      "paper_anchor": "Sec. 3.4, pp. 12-14",
+      "departure": "The degree control reads a candidate's distinct partner count over all typed families, not interaction edges alone, because the frozen snapshot carries no interaction edge.",
+      "justification": "the quantity stays the same kind of thing the manuscript controls for; the definition is recorded here rather than left implicit."
+    },
+    {
+      "paper_anchor": "Sec. 2.1, p. 3",
+      "departure": "The manuscript does not report the optimiser weight decay, the warm-up schedule, gradient clipping, the readiness tier count, the model width, the graph-context dimension or the number of attention heads. The release exposes each of them in config with a declared default.",
+      "justification": "these are engineering defaults, labelled as such, not reported values."
+    },
+    {
+      "paper_anchor": "Table 1, p. 10",
+      "departure": "The held-out curated target set of 148 targets is not public. The released panel carries a declared target label derived from its own construct.",
+      "justification": "the evaluation stack, the statistics and the ranking metrics are exercised end to end; the manuscript's recovery values remain NOT_RUN."
+    }
+  ],
+  "transcribed_values": {
+    "cohort_samples_total": 1332.0,
+    "curated_targets": 148.0,
+    "evaluation_units": 1184.0,
+    "approved_family_targets": 41.0,
+    "primary_ndcg20_threshold": 0.5,
+    "primary_margin": 0.039,
+    "parity_margin": 0.01,
+    "parity_point_difference": 0.003,
+    "parity_interval_lower": -0.003,
+    "parity_interval_upper": 0.009,
+    "kl_drop": 0.521,
+    "kl_drop_multiple": 2.6,
+    "js_divergence": 0.118,
+    "faithfulness_gain": 0.455,
+    "stability_gain": 0.137,
+    "best_baseline_kl_gap": 0.296,
+    "best_baseline_faithfulness": 0.371,
+    "best_baseline_faithfulness_gap": 0.377,
+    "best_baseline_stability": 0.588,
+    "best_baseline_stability_gap": 0.19,
+    "ndcg_gap_strongest": 8.8,
+    "ndcg_gap_weakest": 22.8,
+    "auprc_gap_typed_graph": 13.0,
+    "auprc_gap_filter": 19.2,
+    "minimum_meaningful_kl": 0.2,
+    "minimum_meaningful_faithfulness": 0.25,
+    "minimum_meaningful_stability": 0.08,
+    "shortlist_spearman": 0.66,
+    "degree_gap_shortlist_sd": 0.42,
+    "degree_gap_graph_only_sd": 1.87,
+    "readiness_prevalence_baseline": 0.196,
+    "ece_framework": 0.041,
+    "ece_filter": 0.118,
+    "ece_prevalence": 0.184,
+    "training_time_ratio": 1.8,
+    "cellstate_withheld_ndcg20": 0.512,
+    "three_layer_ndcg20": 0.436,
+    "full_panel_three_layer_ndcg20": 0.531,
+    "cohort_ndcg_min": 0.478,
+    "cohort_ndcg_max": 0.556,
+    "lambda_immune": 0.5,
+    "lambda_readiness": 0.5,
+    "lambda_perturbation": 0.25,
+    "learning_rate": 0.001,
+    "batch_size": 32.0,
+    "epochs": 60.0,
+    "modality_dropout_train": 0.2,
+    "modality_dropout_inference": 0.0,
+    "n_programmes": 12.0,
+    "n_evidence_layers": 4.0,
+    "n_cohorts": 8.0,
+    "n_single_cell_resources": 3.0,
+    "n_spatial_resources": 3.0,
+    "n_perturbation_resources": 2.0,
+    "n_seeds": 5.0,
+    "n_candidate_positions_moved": 6.0,
+    "n_shortlist": 12.0,
+    "n_wide_shortlist": 20.0,
+    "bootstrap_resamples": 1000.0
+  }
+}

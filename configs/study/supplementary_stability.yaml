@@ -1,0 +1,9 @@
+# Sec. 3.4 stability families and the fifth percentile beside the mean.
+name: supplementary_stability
+parents: [study/primary]
+families:
+  - cohort_resample
+  - pathway_holdout
+  - modality_dropout
+report_fifth_percentile: true
+stability_draws: 25

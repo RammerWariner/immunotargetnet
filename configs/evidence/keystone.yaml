@@ -1,0 +1,15 @@
+# Keystone evidence layer (Sec. 2.2): interaction, pathway and tractability annotations.
+snapshot: assets/keystone_snapshot.json
+refresh:
+  enabled: false
+  endpoint: https://api.platform.opentargets.org/api/v4/graphql
+  min_programmes_for_interaction_panel: 3
+  min_interaction_score: 0.4
+  pause_seconds: 1.0
+  retries: 4
+readiness_label:
+  # Clinical-stage buckets of the platform tractability schema.
+  labels:
+    - Approved Drug
+    - Advanced Clinical
+    - Phase 1 Clinical

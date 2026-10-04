@@ -1,0 +1,16 @@
+# Three spatial resources, two of which profile psoriasis (Sec. 2.2).
+resources:
+  - accession: GSE206391
+    platform: GPL24676
+    release_year: 2022
+    psoriasis_cohort: true
+  - accession: GSE310145
+    platform: GPL24676
+    release_year: 2026
+    psoriasis_cohort: true
+  - accession: GSE299256
+    platform: GPL24676
+    release_year: 2025
+    psoriasis_cohort: false
+sections_per_resource: 3
+use_reference_resource_for_psoriasis_claims: false

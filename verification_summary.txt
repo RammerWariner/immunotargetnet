@@ -1,0 +1,33 @@
+ImmunoTargetNet verification summary
+root	ImmunoTargetNet_A_Multimodal_Multi_Omics_Framework_for_Immune_Related_Target_Prioritisation_in_Psoriasis
+overall_status	PARTIALLY_VERIFIED
+code_status	NOT_RUN
+manuscript_status	FAIL
+
+tally
+BLOCKED	2
+FAIL	7
+NOT_RUN	9
+PASS	76
+
+gates
+ruff	exit_code=0
+black	exit_code=0
+isort	exit_code=0
+mypy	exit_code=0
+pytest	exit_code=0
+
+code_failures	0
+
+manuscript_discrepancies	7
+manuscript-cellstate-withholding-present	Sec. 3.3 reports withholding the cell-state layer as NDCG@20 0.512, but Table 2(b) carries [0.497, 0.502, 0.526, 0.534, 0.539, 0.541] and Table 4 carries no cell-state row at all; the value appears in the prose only.
+manuscript-mask-logit-notation	Eq. (2) adds log m_{g,j} to the attention logits, so an unavailable token takes a logit of -inf. Algorithm 1 line 10 writes the same term as 'log M', a positive constant that would shift every logit equally and mask nothing.
+manuscript-mask-index-space	Sec. 2.1 defines the availability mask over the L tokens the encoder builds and writes m_{g,j} with j indexing that token axis; Algorithm 1 loops j over the M evidence layers and tests m_{g,j}. The two statements index the same symbol over different spaces.
+manuscript-context-token-duplication	Sec. 2.3 states that the keystone layer is realised as the graph-context embedding, so it is one of the M = 4 layer tokens; Algorithm 1 builds a token per layer and then appends u_ctx(h_g) again, which yields five tokens for four layers.
+manuscript-table6-column-reference	Sec. 2.7.1 refers to 'the cost figures in column 6 in table 6'. Table 6's sixth column is peak memory in gigabytes; the cost figures are the training hours (column 3) and the inference latency (column 4).
+manuscript-figure1-baseline-caption	Figure 1's legend plots the differential-expression baseline against typed-graph ranking, and its caption calls them 'the two most powerful baselines (non-framework)'. Table 1 makes differential expression the weakest configuration at NDCG@20 0.311.
+manuscript-abstract-resource-count	the abstract enumerates 16 resources (eight cohorts, three single-cell, three spatial, two perturbation); Sec. 2.2 names a further four keystone resources (interaction network, gene-set collections, approved immune gene groups, drug-target and tractability annotations), so the abstract's enumeration covers the four evidence layers' non-keystone members only.
+
+A discrepancy inside the manuscript's own tables is not a defect in this release; it is kept as FAIL so the disagreement is visible in the record.
+
+outstanding	11

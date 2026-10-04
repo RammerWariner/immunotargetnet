@@ -1,0 +1,18 @@
+# Evaluation protocol (Sec. 2.7.1).
+primary_metric: NDCG@20
+primary_threshold: 0.50
+parity_margin: 0.010
+parity_level: 0.90
+minimum_meaningful:
+  immune_relevance_divergence: 0.20
+  attribution_faithfulness: 0.25
+  rank_stability: 0.08
+splits:
+  unit: gene_in_cohort
+  folds: leave_one_cohort_out
+  validation_share: 0.15
+metrics:
+  recovery: [NDCG@10, NDCG@20, NDCG@30, NDCG@50, NDCG@100, MRR, AUROC, Recall@50]
+  interpretability: [KL, JS, AUCdeletion]
+  readiness: [AUPRC, AUROC, ECE]
+  stability: [kendall_tau_mean, kendall_tau_p5]

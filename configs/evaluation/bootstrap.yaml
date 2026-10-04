@@ -1,0 +1,9 @@
+# Blocked bootstrap (Sec. 2.7.3).
+resamples: 1000
+level: 0.95
+paired_level: 0.90
+block_unit: gene
+seed: 20260101
+multiplicity:
+  method: holm
+  alpha: 0.05

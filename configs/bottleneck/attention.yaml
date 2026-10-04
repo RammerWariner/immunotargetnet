@@ -1,0 +1,9 @@
+# Bottleneck structure. K = 12 is fixed by Sec. 2.1; the rest are engineering defaults.
+model_dim: 32
+n_attention_heads: 4
+n_graph_rounds: 2
+n_readiness_tiers: 2
+constrained: true
+graph_enabled: true
+head_hidden_dim: 64
+context_dim: 16

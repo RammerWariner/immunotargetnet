@@ -1,0 +1,5 @@
+# Table 4 row: minus_cellstate_layer.
+name: ablation_no_cellstate_layer
+configuration: minus_cellstate_layer
+parents: [study/primary]
+keep_layers: [0, 2, 3]

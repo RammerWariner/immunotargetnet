@@ -1,0 +1,6 @@
+# Table 4 row: minus_druggability_head.
+name: ablation_no_druggability_head
+configuration: minus_druggability_head
+parents: [study/primary]
+lambda_readiness: 0.0
+readiness_from_filter: true

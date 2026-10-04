@@ -1,0 +1,38 @@
+# Eight public expression cohorts of Sec. 2.2.
+# Contrast assignment follows the manuscript: three lesional-versus-non-lesional cohorts,
+# four treatment time-course cohorts and one blood pharmacological series.
+cohorts:
+  - accession: GSE53552
+    contrast: lesional_vs_nonlesional
+    platform: GPL570
+    release_year: 2013
+  - accession: GSE30999
+    contrast: lesional_vs_nonlesional
+    platform: GPL570
+    release_year: 2012
+  - accession: GSE182740
+    contrast: lesional_vs_nonlesional
+    platform: GPL20301
+    release_year: 2022
+  - accession: GSE69967
+    contrast: treatment_timecourse
+    platform: GPL10558
+    release_year: 2015
+  - accession: GSE85034
+    contrast: treatment_timecourse
+    platform: GPL570
+    release_year: 2016
+  - accession: GSE201827
+    contrast: treatment_timecourse
+    platform: GPL24676
+    release_year: 2023
+  - accession: GSE212836
+    contrast: treatment_timecourse
+    platform: GPL24676
+    release_year: 2024
+  - accession: GSE55201
+    contrast: blood_pharmacological
+    platform: GPL10558
+    release_year: 2014
+series_matrix_suffix: _series_matrix.txt.gz
+variant_stabilising_offset: 1.0

@@ -1,0 +1,8 @@
+# Degree-matched control of Sec. 3.4.
+name: supplementary_degree_control
+parents: [study/primary]
+control: ordinary least squares on the standardised interaction degree
+report:
+  - shortlist_mean_gap_sd
+  - graph_only_top_ten_gap_sd
+  - degree_adjusted_shortlist_positions

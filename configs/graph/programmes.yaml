@@ -1,0 +1,64 @@
+# The twelve immune programmes of Sec. 2.4, named by their MSigDB collection identifiers.
+release: 2023.2.Hs
+programmes:
+  - key: myeloid_antigen_presentation
+    collections:
+      - GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN
+      - GOBP_MHC_CLASS_II_BIOSYNTHETIC_PROCESS
+      - REACTOME_MHC_CLASS_II_ANTIGEN_PRESENTATION
+      - GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION
+  - key: type17_effector_output
+    collections:
+      - GOBP_T_HELPER_17_CELL_DIFFERENTIATION
+      - GOBP_T_HELPER_17_TYPE_IMMUNE_RESPONSE
+      - GOBP_INTERLEUKIN_17_PRODUCTION
+  - key: type1_effector_output
+    collections:
+      - GOBP_T_HELPER_1_CELL_DIFFERENTIATION
+      - GOBP_T_HELPER_1_TYPE_IMMUNE_RESPONSE
+      - GOBP_INTERLEUKIN_12_PRODUCTION
+  - key: type2_effector_output
+    collections:
+      - GOBP_T_HELPER_2_CELL_DIFFERENTIATION
+      - GOBP_INTERLEUKIN_4_PRODUCTION
+      - GOBP_TYPE_2_IMMUNE_RESPONSE
+  - key: type17_associated_epithelial_response
+    collections:
+      - GOBP_RESPONSE_TO_INTERLEUKIN_17
+  - key: interleukin_36_alarm_signalling
+    collections:
+      - REACTOME_INTERLEUKIN_36_PATHWAY
+      - GOBP_INTERLEUKIN_1_PRODUCTION
+  - key: innate_pattern_recognition_priming
+    collections:
+      - GOBP_CYTOSOLIC_PATTERN_RECOGNITION_RECEPTOR_SIGNALING_PATHWAY
+      - GOBP_CELL_SURFACE_PATTERN_RECOGNITION_RECEPTOR_SIGNALING_PATHWAY
+      - GOBP_MYD88_DEPENDENT_TOLL_LIKE_RECEPTOR_SIGNALING_PATHWAY
+      - GOBP_INNATE_IMMUNE_RESPONSE
+  - key: cytokine_signal_transduction
+    collections:
+      - GOBP_CYTOKINE_MEDIATED_SIGNALING_PATHWAY
+      - HALLMARK_IL6_JAK_STAT3_SIGNALING
+      - GOBP_INTERLEUKIN_23_PRODUCTION
+  - key: neutrophil_activation
+    collections:
+      - GOBP_NEUTROPHIL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE
+      - GOBP_NEUTROPHIL_DEGRANULATION
+      - GOBP_NEUTROPHIL_MIGRATION
+  - key: keratinocyte_myeloid_chemotaxis
+    collections:
+      - GOBP_NEUTROPHIL_CHEMOTAXIS
+      - GOBP_MYELOID_DENDRITIC_CELL_CHEMOTAXIS
+      - REACTOME_CHEMOKINE_RECEPTORS_BIND_CHEMOKINES
+      - GOBP_LEUKOCYTE_CHEMOTAXIS
+  - key: epidermal_stress_response
+    collections:
+      - GOBP_RESPONSE_TO_OXIDATIVE_STRESS
+      - REACTOME_CELLULAR_RESPONSE_TO_HEAT_STRESS
+      - GOBP_EPIDERMIS_DEVELOPMENT
+  - key: interferon_response
+    collections:
+      - HALLMARK_INTERFERON_GAMMA_RESPONSE
+      - HALLMARK_INTERFERON_ALPHA_RESPONSE
+      - GOBP_RESPONSE_TO_TYPE_I_INTERFERON
+      - GOBP_RESPONSE_TO_TYPE_II_INTERFERON

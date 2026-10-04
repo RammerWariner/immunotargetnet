@@ -1,0 +1,11 @@
+# Sec. 3.4 degradation grid: layer subsets, constrained and free form.
+name: supplementary_degradation
+parents: [study/primary]
+grid:
+  - {key: layers_cohort_only, keep_layers: [0], constrained: true}
+  - {key: layers_cohort_cell, keep_layers: [0, 1], constrained: true}
+  - {key: layers_cohort_cell_niche, keep_layers: [0, 1, 2], constrained: true}
+  - {key: free_cohort_only, keep_layers: [0], constrained: false}
+  - {key: free_cohort_cell, keep_layers: [0, 1], constrained: false}
+  - {key: free_cohort_cell_niche, keep_layers: [0, 1, 2], constrained: false}
+  - {key: layers_keystone_only, keep_layers: [3], constrained: true}

@@ -1,0 +1,18 @@
+# Three single-cell skin resources of Sec. 2.2.
+resources:
+  - accession: GSE254707
+    platform: GPL24676
+    release_year: 2023
+    role: dendritic-cell and macrophage populations, lesion and non-lesion skin
+  - accession: GSE176509
+    platform: GPL18573
+    release_year: 2024
+    role: epidermal single-cell resource separating keratinocytes from immune cells
+  - accession: GSE173706
+    platform: GPL24676
+    release_year: 2021
+    role: paired single-cell and spatial profiling of psoriatic skin
+scoring:
+  max_rank: 1500
+  max_rank_fraction: 0.025
+  collapse_top_fraction: 0.25

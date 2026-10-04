@@ -1,0 +1,18 @@
+# Edge families of the typed graph (Sec. 2.5).
+#
+# The frozen snapshot carries no interaction edge: the platform's interaction resolver
+# returned nothing during the capture sweep, and the sweep budget is recorded in
+# assets/keystone_snapshot.json. The refresh path populates this family from the
+# originating databases the resolver names.
+interaction: []
+annotation:
+  - programme_membership
+  - pathway_membership
+  - population_attribution
+  - compartment_localisation
+  - tractability_annotation
+programme_membership_threshold: 0.05
+attribution_threshold: 0.75
+include_annotation_nodes: true
+pathway_source: assets/pathway_table.json
+pathway_size_window: [3, 400]

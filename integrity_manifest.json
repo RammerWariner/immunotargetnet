@@ -1,0 +1,678 @@
+{
+  "manifest_name": "integrity_manifest.json",
+  "file_count": 134,
+  "total_bytes": 6686654,
+  "manifest_digest": "f571407ae655dd90b57561db80afd5314393380653f9ab4d45f33cd04964adfe",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "53d38ec122c9b512fbbf8d79a38ad690477cb8d381e3a0f8fb4f0e5082705129",
+      "bytes": 324
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha256": "798241a9562cd2296a4b7ca9b49dd9029670cda085d98e8716ae6284708aa2d5",
+      "bytes": 459
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "fea7aed98cfda7a6608bdb6cfacaa4992d3068ce7f0e24bcfaf0fcb93c903d83",
+      "bytes": 678
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d1fd1578e9d21c942f5ad4acb554e4e5531b3a3df0affe849da3e2b7b0827f3c",
+      "bytes": 1080
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "ccc7f27ed84052292028e2148681dca902ed0de6c4956d705aba4dc611ce1e3f",
+      "bytes": 3200
+    },
+    {
+      "path": "README.md",
+      "sha256": "5d71cc0a8bed81052d9d9271772d48e945b8ba4cce9f1d1a705d91a63446456c",
+      "bytes": 11990
+    },
+    {
+      "path": "assets/keystone_snapshot.json",
+      "sha256": "2c2f4cff9278e2d1f1b119affa6e570c553d2ede1eb0706563fb5cd56538c6af",
+      "bytes": 5500720
+    },
+    {
+      "path": "assets/pathway_table.json",
+      "sha256": "61677f34fbc91d31915d404d50897cf9fa7cbe7f43cf6f78899c2d5cd1a22e41",
+      "bytes": 535309
+    },
+    {
+      "path": "assets/programme_table.json",
+      "sha256": "c93d642e3d9043c9ff7652b8f0bbb3ffa843c40bf9e30b7342d7f2b9057cea1a",
+      "bytes": 66780
+    },
+    {
+      "path": "claim_to_code.json",
+      "sha256": "c8dfe87474bc2a30f637d0c7891a6afdda44b6724daf70c8f05e8eeeb3f3f620",
+      "bytes": 20836
+    },
+    {
+      "path": "configs/bottleneck/attention.yaml",
+      "sha256": "028a01870630d05b7025ca39d53188120664f9c689547848f8120d6cb76f7e0a",
+      "bytes": 236
+    },
+    {
+      "path": "configs/bottleneck/mask.yaml",
+      "sha256": "61ab98d3ec3c400f78f74b2c45d9c2a4dc4037414ebbd6a77ee245558433f4c0",
+      "bytes": 163
+    },
+    {
+      "path": "configs/evaluation/bootstrap.yaml",
+      "sha256": "ad08d1d8da1824e749b94bf06f33a42bd015bd42825722839a0a5d57ae02c5c2",
+      "bytes": 156
+    },
+    {
+      "path": "configs/evaluation/metric_families.yaml",
+      "sha256": "1d68b260c240ea6610a8ec7e8bdc87ae037912919af1e996510ffea5605a1712",
+      "bytes": 363
+    },
+    {
+      "path": "configs/evaluation/protocol.yaml",
+      "sha256": "28c0fa9ecbf086e45426336a7907ad1eb56c435ed6ca38caf3e4bd9effd871f0",
+      "bytes": 536
+    },
+    {
+      "path": "configs/evidence/cell_state.yaml",
+      "sha256": "9f94dea02fc889b5247d5279d73b4e39758144a7ca7774cce14452bf21af5d90",
+      "bytes": 588
+    },
+    {
+      "path": "configs/evidence/cohort.yaml",
+      "sha256": "b90ea5b03db4ceea3824d1f09720b4f9a59cc5092e6a6fb3f8cb06aaabca1a3d",
+      "bytes": 1144
+    },
+    {
+      "path": "configs/evidence/keystone.yaml",
+      "sha256": "c7d3f63dee87bf820a205e2515dffd550e5d2ded5cf710d47f1c6cd870a85050",
+      "bytes": 482
+    },
+    {
+      "path": "configs/evidence/niche.yaml",
+      "sha256": "f711cfb69b39b6be16c864c300ba6c1221ede5e77fdecc68cd5de50a6c9b87af",
+      "bytes": 452
+    },
+    {
+      "path": "configs/graph/programmes.yaml",
+      "sha256": "053f9482f48130dda14bbfcedd68a9ee6087235526a21bb2b4169a0c6a5be7b8",
+      "bytes": 2451
+    },
+    {
+      "path": "configs/graph/typed_edges.yaml",
+      "sha256": "3814d8204838adac559c39d8654043c4da51600ce556ae256110e2182db18f23",
+      "bytes": 670
+    },
+    {
+      "path": "configs/study/_smoke.yaml",
+      "sha256": "7192ab2570b29838ffedc84be6edd0bbd4cf6b894050b2320e3029b0f0a2cac2",
+      "bytes": 390
+    },
+    {
+      "path": "configs/study/ablation_bottleneck_and_perturbation.yaml",
+      "sha256": "c083f552f44421559aaade3cef2a381d9132761c36ef19671d60e9a67102fccb",
+      "bytes": 215
+    },
+    {
+      "path": "configs/study/ablation_graph_and_bottleneck.yaml",
+      "sha256": "5125ff1e11fbb320430012682455feebc3599b968d452aaa03716c569062cbb3",
+      "bytes": 190
+    },
+    {
+      "path": "configs/study/ablation_no_bottleneck.yaml",
+      "sha256": "89ec9b65a26b0d3515d47c209c5265aabc5ee4d075c288cdce949b4767d7abe7",
+      "bytes": 138
+    },
+    {
+      "path": "configs/study/ablation_no_cellstate_layer.yaml",
+      "sha256": "4e03ebeb1e8ea85ba1bf63c936092b3ae45d19816d41cfa9fc2a136a62838dc4",
+      "bytes": 157
+    },
+    {
+      "path": "configs/study/ablation_no_druggability_head.yaml",
+      "sha256": "cee93deea290fa3bd4d75866c362f81eccf15cfb969ea2e351c826b81e93b76d",
+      "bytes": 190
+    },
+    {
+      "path": "configs/study/ablation_no_graph_tower.yaml",
+      "sha256": "3ad35db4c6d5336e1c2738b7e6efb82acb8700aa6081cea404c46e0138c7d63f",
+      "bytes": 143
+    },
+    {
+      "path": "configs/study/ablation_no_modality_dropout.yaml",
+      "sha256": "a84852552a94bbb205873457c41d5497d18005418921a70235b005d34dfcf822",
+      "bytes": 164
+    },
+    {
+      "path": "configs/study/ablation_no_niche_layer.yaml",
+      "sha256": "f138b187126aa127f7fe00f4232080b5da888a8e9adc792606e789a05b85066b",
+      "bytes": 145
+    },
+    {
+      "path": "configs/study/ablation_no_perturbation_objective.yaml",
+      "sha256": "c6e3b91a043cf2e3d3949edf0eee03d046c13e436c87a2d2ba7acf6e4d3600eb",
+      "bytes": 180
+    },
+    {
+      "path": "configs/study/primary.yaml",
+      "sha256": "a5f1dfd721c7dd76cbc302c28d5fc2aee09e8e09e13e299cd6e99e9742e73f22",
+      "bytes": 553
+    },
+    {
+      "path": "configs/study/supplementary_bootstrap.yaml",
+      "sha256": "7ce7a4c3099110dee1183add29ca27e9975338d6e9f433f1c3549d71ed93fe22",
+      "bytes": 193
+    },
+    {
+      "path": "configs/study/supplementary_degradation.yaml",
+      "sha256": "fff0852851c79afac34b6efae9f7858804078c222134157852269515147467b7",
+      "bytes": 632
+    },
+    {
+      "path": "configs/study/supplementary_degree_control.yaml",
+      "sha256": "9f49806802b84bc18262e4fb579ebde4ed62c6f2e457266fab211d2503301052",
+      "bytes": 273
+    },
+    {
+      "path": "configs/study/supplementary_parity.yaml",
+      "sha256": "64641985bfba00b953dd9be158a365339f9be1cbd8c6e7068fec730aca025ea7",
+      "bytes": 248
+    },
+    {
+      "path": "configs/study/supplementary_per_cohort.yaml",
+      "sha256": "0db38d4f3fb250b5bff0685eb9fc8e2cfacc1e68987525a0a7edff563ecde045",
+      "bytes": 146
+    },
+    {
+      "path": "configs/study/supplementary_seed_sensitivity.yaml",
+      "sha256": "2d705b65ca3cc6c895a5a40ef97c69c85fcc4b3a064465d607b45586e7a37bc9",
+      "bytes": 152
+    },
+    {
+      "path": "configs/study/supplementary_stability.yaml",
+      "sha256": "5cc848a05572a51ee5d0fdcc965b3ba4655cf8f99b2d407a48c363e83ef78b79",
+      "bytes": 248
+    },
+    {
+      "path": "configs/training/optimiser.yaml",
+      "sha256": "6772880db1fb7407e334addbf4671746847aaf53a3ffb7f29d9d408892db9220",
+      "bytes": 225
+    },
+    {
+      "path": "configs/training/schedule.yaml",
+      "sha256": "8243fa2496651cc7c9b27c7b0fb2fed263e7802cded03b82bd18b8cf79e93a36",
+      "bytes": 228
+    },
+    {
+      "path": "dataset_urls.txt",
+      "sha256": "45bd07ad2117e5f52312cec287372de4634bbca1abddfb58ca8a597ac0c21e8c",
+      "bytes": 4212
+    },
+    {
+      "path": "environment.yml",
+      "sha256": "303a90735257cd66d8b4fec222cb3acb2a77af0dff904b79041ea22598b5961c",
+      "bytes": 267
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "ccb80b9b09d20cfc269258b208581d25e0ea5060a87167ad63ab1f04e1911e3d",
+      "bytes": 2256
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "effa614a93d7ee07ebf87944feb37ca8234a9ff1ea203eee5e02658bbece34bf",
+      "bytes": 107
+    },
+    {
+      "path": "scripts/launch_eval.sh",
+      "sha256": "d253bcd6be447eded0f8b6f6afb732cebb76912b8ddf9a1a8fa9eaf5a16bdca9",
+      "bytes": 705
+    },
+    {
+      "path": "scripts/launch_train.sh",
+      "sha256": "f03065b692290788b46ec456b98b2be36c0c419da3dee888ad23ed3fe4c92909",
+      "bytes": 825
+    },
+    {
+      "path": "scripts/prepare_evidence.sh",
+      "sha256": "666e20a5ef5e3022b6ab316ea9e633563f5eeab6164daf77346d3fa986511299",
+      "bytes": 850
+    },
+    {
+      "path": "src/immunotargetnet/__init__.py",
+      "sha256": "1e233f5061628140a426611835b0a3411a3b677db652af84e47ef29b8a7a41fa",
+      "bytes": 88
+    },
+    {
+      "path": "src/immunotargetnet/bottleneck/__init__.py",
+      "sha256": "da866f7554bbed85be86731191061cd7fb09d50545b058297f03412a0f6ab7d3",
+      "bytes": 29
+    },
+    {
+      "path": "src/immunotargetnet/bottleneck/attention.py",
+      "sha256": "f500fef15574d20f7b47ac47044a338bf70ead9b22a2c64c0f6d43bb392fb7f2",
+      "bytes": 5255
+    },
+    {
+      "path": "src/immunotargetnet/bottleneck/dropout.py",
+      "sha256": "5b070451897f8901ace2ad189bbf1f6b52b69754fbf06fd7cab5b8ef5b7a48d9",
+      "bytes": 2160
+    },
+    {
+      "path": "src/immunotargetnet/bottleneck/fusion.py",
+      "sha256": "c64c80dac2609f1c947af89868ba17632c7e6803d30af3e68e0940b31e982522",
+      "bytes": 941
+    },
+    {
+      "path": "src/immunotargetnet/cli/__init__.py",
+      "sha256": "5c406e2a8158bd40889dc51054b526ef31d310474c10066fcfd13f1d3c1033a4",
+      "bytes": 69
+    },
+    {
+      "path": "src/immunotargetnet/cli/build_evidence.py",
+      "sha256": "c1f203e47d483d264e0597d4cf36fc1ccbed3c5572c3b325da5cfdc029c9935a",
+      "bytes": 7287
+    },
+    {
+      "path": "src/immunotargetnet/cli/evaluate.py",
+      "sha256": "e5fa11b3f41b1b706417f26f0d9128e4530adcde7aa98a88eaf3740ba0c79ad5",
+      "bytes": 3970
+    },
+    {
+      "path": "src/immunotargetnet/cli/prioritise.py",
+      "sha256": "7e6f947f340b64aab75ea898e9d64ee0673eef2fb406fe0acce7a5d9ba59acbf",
+      "bytes": 7170
+    },
+    {
+      "path": "src/immunotargetnet/cli/train.py",
+      "sha256": "8de4ad19ab1df0123f4a9ec225bc57e8a53c0ee62f8e8385a6fbf33dca8bf7f3",
+      "bytes": 3202
+    },
+    {
+      "path": "src/immunotargetnet/cli/verify.py",
+      "sha256": "729870d844f4b0860a626aa29446e6b556f07ea11d1312650b4c2ff4835417b9",
+      "bytes": 309
+    },
+    {
+      "path": "src/immunotargetnet/encoders/__init__.py",
+      "sha256": "500d1ec9f62e848f67af9dd2547300642cba05fb4ddcd0a6a5c6018176e6a71d",
+      "bytes": 27
+    },
+    {
+      "path": "src/immunotargetnet/encoders/frozen.py",
+      "sha256": "cc1dacb5b58856bb7be5bcfab0b638e41831c1ea8676357cafba2a3c12d26ff5",
+      "bytes": 5117
+    },
+    {
+      "path": "src/immunotargetnet/evidence/__init__.py",
+      "sha256": "5bbf52f9e8b28724a463a4927ba0e9293f0863d21415c1b0ab4df9819fa4c68c",
+      "bytes": 27
+    },
+    {
+      "path": "src/immunotargetnet/evidence/cellstate.py",
+      "sha256": "70311bfbfbdd8c29ab0aabea9dc59c2204fbc76ea3d678ad73c40da2057a45da",
+      "bytes": 4387
+    },
+    {
+      "path": "src/immunotargetnet/evidence/cohort.py",
+      "sha256": "def3a59a896fafdb3595cd320c16fea53f4efaf9ed8b8d1aec6fc2a42f3d6359",
+      "bytes": 7471
+    },
+    {
+      "path": "src/immunotargetnet/evidence/fixture.py",
+      "sha256": "e500dabc082f2acb1358e341b2f9da35c1ac35db96e91674b965eb44340c5e4d",
+      "bytes": 10875
+    },
+    {
+      "path": "src/immunotargetnet/evidence/geo.py",
+      "sha256": "8c6473b8cecd3789df65ec4207c363155059097885a15613e45c427bdea64a3f",
+      "bytes": 5972
+    },
+    {
+      "path": "src/immunotargetnet/evidence/io.py",
+      "sha256": "74eec53d4483b64e82a6ef760f739faaf6891e406f2a639bbf4b27982d29cfa9",
+      "bytes": 5113
+    },
+    {
+      "path": "src/immunotargetnet/evidence/keystone.py",
+      "sha256": "b98639aa8eefe6f360a3c62b691ba843a5bb42e2ea6e882a2647fd83308c9b63",
+      "bytes": 6649
+    },
+    {
+      "path": "src/immunotargetnet/evidence/markers.py",
+      "sha256": "4e6a485a151478b63c7488ba0f682fbee9e2cb6f3192da176207aa98e4dd957b",
+      "bytes": 2804
+    },
+    {
+      "path": "src/immunotargetnet/evidence/msigdb.py",
+      "sha256": "c6037f3226422bc56c041b70758e75436d6332fe30189816ed2cd87c0043b5c3",
+      "bytes": 3358
+    },
+    {
+      "path": "src/immunotargetnet/evidence/niche.py",
+      "sha256": "401f91fdf386bc97b78522ec90dc01a3884fdd08725742c8de086bfcafc96632",
+      "bytes": 4266
+    },
+    {
+      "path": "src/immunotargetnet/evidence/opentargets.py",
+      "sha256": "8bb0a0552df4e5ea504365df8572d34d9500dd51de59e7ef020245be04bfee85",
+      "bytes": 7872
+    },
+    {
+      "path": "src/immunotargetnet/evidence/panel.py",
+      "sha256": "7f8af00fea55a48d5af13446f538b91bb25da53b2099d3c07131b646033b1e3a",
+      "bytes": 9982
+    },
+    {
+      "path": "src/immunotargetnet/evidence/pathways.py",
+      "sha256": "d2e7105e2ade00bc4f469d27aafc402534197639bf2f07ae1ba8ffc3ac00d73b",
+      "bytes": 3782
+    },
+    {
+      "path": "src/immunotargetnet/evidence/programmes.py",
+      "sha256": "f8fb8b887717e8da0f77c2a732ccc09472dc2ef573d6868b8fe0842bd0ee7a50",
+      "bytes": 6111
+    },
+    {
+      "path": "src/immunotargetnet/evidence/schema.py",
+      "sha256": "7011bbe5f3e99bf8fe23838a826b1577c977ebbd86ba4bde1d5948d2a611790d",
+      "bytes": 5437
+    },
+    {
+      "path": "src/immunotargetnet/evidence/scoring.py",
+      "sha256": "bd2e50607d50a623ee3ee7ad7a41ad39606c106e2d50f9521cb7b06b91ccce86",
+      "bytes": 3378
+    },
+    {
+      "path": "src/immunotargetnet/graph/__init__.py",
+      "sha256": "dad66c31c41e1b63e35c9a4ba9ab595e865147dfb6e32c3eea46204257ca8d20",
+      "bytes": 24
+    },
+    {
+      "path": "src/immunotargetnet/graph/assembly.py",
+      "sha256": "27799677008a1bfda9f997e76ee53674bfa589d3da80d7b119de9906214071f1",
+      "bytes": 7823
+    },
+    {
+      "path": "src/immunotargetnet/graph/degree.py",
+      "sha256": "c860dabb3cd440abdf2190f16b3e7eb26272c9e9db60277c4f0255afb379877e",
+      "bytes": 2561
+    },
+    {
+      "path": "src/immunotargetnet/graph/heads.py",
+      "sha256": "2d49a72282e7b3492a4646dc9ded878456bc925368aef00fe1846cee5e2cec1a",
+      "bytes": 1687
+    },
+    {
+      "path": "src/immunotargetnet/graph/message_passing.py",
+      "sha256": "5a00585d015104c623031e65f400ab644c1535afb2ce31db4116497a659cd57d",
+      "bytes": 4523
+    },
+    {
+      "path": "src/immunotargetnet/metrics/__init__.py",
+      "sha256": "73a27bd944c9291e4f4d6c8f3b72ccc86281f65a68950e866b5eba6abfbc7acb",
+      "bytes": 26
+    },
+    {
+      "path": "src/immunotargetnet/metrics/attribution.py",
+      "sha256": "2d797cb7ae6ee4e5a92c144cb1b5764246db4b2172139834b10a80bb8aa66ab9",
+      "bytes": 2869
+    },
+    {
+      "path": "src/immunotargetnet/metrics/discrimination.py",
+      "sha256": "43cd1edc60ca22d61d5cc1de1d7461d74cbc9a75a6f4ae591c9fef134e94d347",
+      "bytes": 4660
+    },
+    {
+      "path": "src/immunotargetnet/metrics/divergence.py",
+      "sha256": "abc03078ef35ea8f4dcde007386833d883f5f0d16a04901c2bcd01569b86d9ac",
+      "bytes": 1846
+    },
+    {
+      "path": "src/immunotargetnet/metrics/ranking.py",
+      "sha256": "95f60f6e87539959f7c49879d3f10bcd990c5fe61b33f06e4beba6b365a5c6a4",
+      "bytes": 3414
+    },
+    {
+      "path": "src/immunotargetnet/metrics/stability.py",
+      "sha256": "9472a971e03109e4ff54f20da6bf1f5331694bb9b839ea2b8ef930a25b95433c",
+      "bytes": 3056
+    },
+    {
+      "path": "src/immunotargetnet/model.py",
+      "sha256": "4c6e25cc77bcf67d9a1273fcdbf823c86ce9b1b7c982371f7d2904d7fce6cfde",
+      "bytes": 5739
+    },
+    {
+      "path": "src/immunotargetnet/objectives/__init__.py",
+      "sha256": "55bf41ac239da43b4d4f500f47e78ccbffaded971dfcf8c4ab02c160131d6703",
+      "bytes": 29
+    },
+    {
+      "path": "src/immunotargetnet/objectives/total.py",
+      "sha256": "5ff04d2d5a69e9350bc30beb9e2a5f2520029618a942e21fbe3d314954094c9d",
+      "bytes": 4228
+    },
+    {
+      "path": "src/immunotargetnet/protocols/__init__.py",
+      "sha256": "ba54e4205869ae6d5753570b0188551cd23787b87ee7ad851c451fca1e5b1627",
+      "bytes": 28
+    },
+    {
+      "path": "src/immunotargetnet/protocols/baselines.py",
+      "sha256": "5b611c758d4b7ae062467fbe74d3bc4e86acae7f35f6f2063a04d6a8b47e5501",
+      "bytes": 7701
+    },
+    {
+      "path": "src/immunotargetnet/protocols/evaluation.py",
+      "sha256": "f070b7a4155d66c30d3582879f33ffd788091ed171bf7db164f932ea15c9e7fc",
+      "bytes": 5781
+    },
+    {
+      "path": "src/immunotargetnet/protocols/perturbation.py",
+      "sha256": "c9cfcd1510442bb1248f424e1e67b261feed780b01f8f8b12df03757434c0d6b",
+      "bytes": 4420
+    },
+    {
+      "path": "src/immunotargetnet/protocols/splits.py",
+      "sha256": "5b00533cf757921af5281a55b56f89d0cda4bdea48ac4f63669f9fb6d8994d4c",
+      "bytes": 3472
+    },
+    {
+      "path": "src/immunotargetnet/protocols/study.py",
+      "sha256": "8e4820e285885bae6727d74a404d5220b2971c58b2eccc5bc430e250d840d80e",
+      "bytes": 36172
+    },
+    {
+      "path": "src/immunotargetnet/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/immunotargetnet/runtime/__init__.py",
+      "sha256": "d5a1a444cf95bd10576a808521e728974da44d85b8f141cbdbf371a14518b5a4",
+      "bytes": 26
+    },
+    {
+      "path": "src/immunotargetnet/runtime/atomic.py",
+      "sha256": "4e6d4632a0298c144e6c1cf353489d1714b1fdf96dea65d1979e6f977ee78b4e",
+      "bytes": 1874
+    },
+    {
+      "path": "src/immunotargetnet/runtime/logging_setup.py",
+      "sha256": "3387b85f5bed4ed18326b6f5d536ee06af43ac1157514cb92fe1fe6f333e735d",
+      "bytes": 742
+    },
+    {
+      "path": "src/immunotargetnet/runtime/numeric.py",
+      "sha256": "5aa938cd9c6834339835b0b0ea7c2a58ebb5a0125bb35fbe2549f8f2237e5e9e",
+      "bytes": 3410
+    },
+    {
+      "path": "src/immunotargetnet/runtime/seed.py",
+      "sha256": "db240def035e97dd2da593b1d00be637e25a15782a54c5e66b36c8c5d4ef306e",
+      "bytes": 1428
+    },
+    {
+      "path": "src/immunotargetnet/stats/__init__.py",
+      "sha256": "d5a8a959b5c8d1e2a97af02f7712b62da6778f292a8903a1333ea5584ac1a70e",
+      "bytes": 24
+    },
+    {
+      "path": "src/immunotargetnet/stats/bootstrap.py",
+      "sha256": "0d4d6e0b09afe2669790240a138641112599e1d0cd3ba3c8e674929522b29512",
+      "bytes": 3884
+    },
+    {
+      "path": "src/immunotargetnet/stats/equivalence.py",
+      "sha256": "3de766b11061e234d8bee9573792a8c39a84dfec12924d46ff5494aff0ee9d16",
+      "bytes": 3288
+    },
+    {
+      "path": "src/immunotargetnet/stats/holm.py",
+      "sha256": "b93b76e23ada0affd323ffb3bda7bab01a72bee75b00991288dfb0b93b5a9aef",
+      "bytes": 2003
+    },
+    {
+      "path": "src/immunotargetnet/training/__init__.py",
+      "sha256": "7c3033fdb751122ff082a10b9a9d18ffaa962f277cebd569934ca39a69584fd6",
+      "bytes": 27
+    },
+    {
+      "path": "src/immunotargetnet/training/checkpoint.py",
+      "sha256": "5124499021fcf1768ad2aa09085b0e11595ff0d2b7eb3fad7ec0de0f423ef7d5",
+      "bytes": 3052
+    },
+    {
+      "path": "src/immunotargetnet/training/earlystop.py",
+      "sha256": "cdc00ccce0446db8e3ddfcf6378a794d6f4046ab9d330cdfcc0dc845bff75aba",
+      "bytes": 1255
+    },
+    {
+      "path": "src/immunotargetnet/training/loop.py",
+      "sha256": "2e1410d22b5edf25f2766044e4008d93a82184d02f1088148b4e96ef3a6c406c",
+      "bytes": 8860
+    },
+    {
+      "path": "src/immunotargetnet/training/optim.py",
+      "sha256": "9a4d0fd29c6db0c9f2264c7bc46c9956e644fe79e8871180f1fe200b6b357e10",
+      "bytes": 2800
+    },
+    {
+      "path": "src/immunotargetnet/verification/__init__.py",
+      "sha256": "7fc3746c630fa0d710ff48a832c63c31c241fae9753780abe627333a6fff5b2f",
+      "bytes": 31
+    },
+    {
+      "path": "src/immunotargetnet/verification/checks.py",
+      "sha256": "9403a10c4320054e57b733e15d2908464fef2018f3ec932aaad319f8b967e91f",
+      "bytes": 2925
+    },
+    {
+      "path": "src/immunotargetnet/verification/claimed_values.py",
+      "sha256": "d57087e174d3d20b3343a3e99f61212fec5f0366c3eab6aa8277b8caf77bc43e",
+      "bytes": 9657
+    },
+    {
+      "path": "src/immunotargetnet/verification/claims.py",
+      "sha256": "4e52e37fa66b6998474b58d442b722d536cebe0e25d4cc58d1b4a0714bd7da2d",
+      "bytes": 13125
+    },
+    {
+      "path": "src/immunotargetnet/verification/driver.py",
+      "sha256": "a3a5514010bc3c709954c32df6d9be6bef61c22db2a2544b18649c0e85042dea",
+      "bytes": 17940
+    },
+    {
+      "path": "src/immunotargetnet/verification/execution.py",
+      "sha256": "be66c5ad85847828290c7b4777cc4b871ce0b3cc1bc8475a0e3a31714e8d43f9",
+      "bytes": 48394
+    },
+    {
+      "path": "src/immunotargetnet/verification/hygiene.py",
+      "sha256": "d16bbbab981ecf03317dc6303b1fda59ab15a4f92cb28e530763ce659c3f3445",
+      "bytes": 14904
+    },
+    {
+      "path": "src/immunotargetnet/verification/manifest.py",
+      "sha256": "f5a10ecc6c8d100e825f229355744edb3ca9e58cedf0358d6318281fafe4ea2e",
+      "bytes": 3911
+    },
+    {
+      "path": "src/immunotargetnet/verification/manuscript.py",
+      "sha256": "215473a0b3599059718293a4086f5bc2ac63a11e931d799dc3108fc0082a5aaa",
+      "bytes": 36688
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "b432d4276d12dc66ff81de77e0aad16228c626f039b5cd22ac55f979a715833d",
+      "bytes": 737
+    },
+    {
+      "path": "tests/test_evidence.py",
+      "sha256": "9c716c78e169019191bd70bac6ceddb9f58a5de9c8b7ffd7937c03b22dde6a07",
+      "bytes": 9633
+    },
+    {
+      "path": "tests/test_manuscript_arithmetic.py",
+      "sha256": "94f11a43a9ff9020d412ec93bf780ce02056096f87380a218ca706784be91835",
+      "bytes": 4752
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "sha256": "d976ea6c9596fc8a0d5c87121f503a44ab8bc7db867290e282f05970d89621f1",
+      "bytes": 7515
+    },
+    {
+      "path": "tests/test_model.py",
+      "sha256": "38ea2739e1206886f35d993f75cb395618efb0ba1eef8ca21eaf2be8802817af",
+      "bytes": 9947
+    },
+    {
+      "path": "tests/test_objectives.py",
+      "sha256": "072bb6aefa2cb8818bcbf898fa80f2fa158c0479206ac237a1fb3c47573dc30a",
+      "bytes": 4441
+    },
+    {
+      "path": "tests/test_protocols.py",
+      "sha256": "4366d1dcb5e0d7327fed76d446f4b27f5b66b89c1b188bde225a7fbaef6e5961",
+      "bytes": 9028
+    },
+    {
+      "path": "tests/test_stats.py",
+      "sha256": "cd19b0f25cb061b23e9abd2e4be8b9e8834dba143f65db3de2046608aecadb5a",
+      "bytes": 5617
+    },
+    {
+      "path": "tests/test_training.py",
+      "sha256": "933fae3765bbf089529dbd43e58c7cc8476a4e6670337ed79578c0c8d97bdb5f",
+      "bytes": 8255
+    },
+    {
+      "path": "tests/test_training_smoke.py",
+      "sha256": "0e80f22b6a849789092ed259172284b64d7680b18c20aca0552a11f03dbccd33",
+      "bytes": 3874
+    },
+    {
+      "path": "tests/test_verification.py",
+      "sha256": "5ae9fa9befdb7739939d89d239c22317543fc18339a4cd123151befaaa3a817c",
+      "bytes": 6247
+    },
+    {
+      "path": "verification_report.json",
+      "sha256": "a2c57ce177f4380b0e357ddf053950e79abd39d1c7b3f397729b3f0db54c960f",
+      "bytes": 47976
+    },
+    {
+      "path": "verification_summary.txt",
+      "sha256": "fd343d2e42ce34ce7386e756c5f1a9f77c7bd7c8fbc7fe18b7f7eb1e9c617568",
+      "bytes": 2568
+    }
+  ]
+}
